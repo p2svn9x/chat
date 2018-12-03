@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use App\Http\Controllers\ApiController;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class LoginController extends ApiController
 {
     /*
     |--------------------------------------------------------------------------
@@ -35,5 +39,26 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login()
+    {
+        $email = $this->post('email');
+        $password = $this->post('password');
+        if (empty($email) || empty($password)) {
+            $this->respondError('Email and password cannot be blank.');
+        }
+        $text = 'Email or password is wrong.';
+        $result =  User::where('email', $email)->get()->first();
+        //$this->responData($result);
+        if (empty($result)) {
+            $this->respondError($text);
+        }
+
+        if (!Hash::check($password, $result->password)) {
+            $this->respondError($text);
+        }
+        Auth::attempt($result);
+        $this->responData();
     }
 }
