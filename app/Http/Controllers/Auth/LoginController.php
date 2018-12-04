@@ -50,7 +50,7 @@ class LoginController extends ApiController
         }
         $text = 'Email or password is wrong.';
         $result =  User::where('email', $email)->get()->first();
-        //$this->responData($result);
+
         if (empty($result)) {
             $this->respondError($text);
         }
@@ -58,6 +58,8 @@ class LoginController extends ApiController
         if (!Hash::check($password, $result->password)) {
             $this->respondError($text);
         }
+        $result = User::where('id', $result->id)->get()->first()->toArray();
+        $this->printData($result);
         Auth::attempt($result);
         $this->responData();
     }

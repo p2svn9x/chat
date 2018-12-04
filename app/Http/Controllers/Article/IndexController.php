@@ -9,6 +9,7 @@ use Illuminate\View\View;
 use App\Models\Articel;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Auth;
 
 class IndexController extends ApiController
 {

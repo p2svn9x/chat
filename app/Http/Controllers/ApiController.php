@@ -53,5 +53,6 @@ class ApiController extends AppController
         echo "<pre>";
             print_r($data);
         echo "</pre>";
+        exit;
     }
 }

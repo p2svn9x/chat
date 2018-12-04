@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use phpDocumentor\Reflection\Types\Array_;
 use Illuminate\Support\Facades\Auth;
-
 class AppController extends Controller
 {
 
