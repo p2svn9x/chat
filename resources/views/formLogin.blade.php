@@ -11,7 +11,8 @@
     <input type="hidden" name="" value="{{csrf_token() }}">
     <br>
     Last name:<br>
-    <input type="text" name="lastname" value="Mouse">
+    <input type="text" name="email" value="langtuhoabinh2010@gmail.com">
+    <input type="password" name="password" value="123456">
     <br><br>
     <input type="submit" value="Submit">
 </form>
