@@ -6,8 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use phpDocumentor\Reflection\Types\Array_;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 class AppController extends Controller
 {
+    protected $user;
+    public function __construct()
+    {
+
+        $this->middleware(function ($request, $next) {
+            $this->user = Auth::user();
+            return $next($request);
+        });
+    }
 
     public function post($key = null, $default = null)
     {

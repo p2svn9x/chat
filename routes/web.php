@@ -15,21 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', 'HomeController@index' );
-Route::get('/demo', 'HomeController@home');
-Route::get('/test1', 'Article\IndexController@show');
-Route::get('/test2', 'Article\IndexController@listTest');
-Route::get('/test3', 'Article\IndexController@passTest');
-Route::get('/test5', 'Article\IndexController@add');
-Route::get('/test4', 'Article\IndexController@verifyPasswordLogin');
-Route::get('/chat', 'Chat\IndexController@show');
-Route::get('/chat1', 'Chat\IndexController@chat');
-Route::get('/demo1', 'Chat\IndexController@demo');
-Route::get('/login');
-Route::post('/login');
-Route::post('conme/test1', 'HahaController@index');
+//Route::get('/dashboard', 'HomeController@index' );
+Route::get('conme/test1', 'HahaController@index');
 Route::get('conme/test', 'HahaController@demo');
+Route::get('/login', '\App\Http\Controllers\Auth\LoginController@formLogin')->name('login');
+Route::post('/login', '\App\Http\Controllers\Auth\LoginController@login');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+//oute::get('user/profile', ['as' => 'profile', 'uses' => 'Article\IndexController@show']);
+//Route::get('user/profile', 'Article\IndexController@show')->name('profile');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

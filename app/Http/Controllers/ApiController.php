@@ -38,6 +38,18 @@ class ApiController extends AppController
         return $this->respondJson(array('status' => $status, 'message' => $message, "data" => $data));
     }
 
+    public function respondLogin($data = null, $starus = 200, $message = "")
+    {
+        $result = array(
+            "status" => $starus,
+            "message" => $message,
+            "data" => $data,
+        );
+        echo json_encode($result);
+    }
+
+
+
     public function respondData($data = null, $starus = 200, $message = "")
     {
         $resutl = array(

@@ -5,23 +5,18 @@ namespace App\Http\Controllers\Article;
 use App\Http\Controllers\ApiController;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use App\Models\Articel;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use Auth;
-
 class IndexController extends ApiController
 {
     public function show()
     {
-        $data['data'] = Articel::select(
-            ['article.id', 'article.name', 'article.img', 'article.status', 'article.sort']
-        )->get();//->toArray();//;
-        //$data = DB::table('article')->get();//->toSql()//;
-        //return View('index', $data);
-        return $this->loadView('index', $data);
-        //$this->responData($data);
+
+        return $this->loadView('test');
+        //$this->responData($this->user);
     }
 
     public function listTest()
