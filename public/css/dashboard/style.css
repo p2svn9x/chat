@@ -13,7 +13,7 @@
 }
 
 @media all and (max-width: 800px) {
-    .fragmentsContainer .fragment .conversationControl .conversation {margin-left: 2px;margin-top: 50px;}
+    .fragmentsContainer .fragment .conversationControl .conversation {margin-left: 2px;}
 }
 *{ margin:0px; padding:0px; font-family: Helvetica, Arial, sans-serif;}
 .conversation ul{
@@ -40,7 +40,8 @@
     float: right;
     background: #0084ff;
     color: #fff;
-    margin-right:8px;
+    margin-right: 8px;
+    /* max-width: 84%; */
 }
 .conversation .him + .me{
     border-bottom-right-radius: 5px;
@@ -90,7 +91,9 @@
     width: 100%;
 }
 .conversation .me-out  .me-message {
-    float:right
+    float:right;
+    /* border: 1px solid; */
+    max-width: 90%;
 }
 
 
@@ -187,4 +190,66 @@
     .conversation .me-out .me-message {
         max-width: 85%;
     }
+}
+
+.conversation .mesOption {
+    width: 100%;
+    /* background: #f00; */
+    padding-top:10px
+
+}
+
+.conversation .mesOption .buttonOption {
+    float:right;
+    /* width:100px; */
+    margin-right: 0px;
+}
+
+.conversation .mesOption .buttonOption button {
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    margin-right: 10px;
+
+    float: left;
+}
+
+.conversation .mesOption .buttonOption button.sendButton {
+    border-radius:50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+    background: #00AFF0;
+
+}
+.conversation .mesOption .buttonOption button.sendButton:hover {
+    background: #0584b3;
+}
+
+.conversation .mesOption .buttonOption button.sendButton span {
+
+    position:absolute;
+
+    left: 11px;
+
+    top: 13px;
+
+    color: #fff;
+
+    font-size: 14px;
+}
+
+.conversation .mesOption .buttonOption button.emoticonsButton {
+    color:#00AFF0;
+    font-size:18px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+    background:#f00
 }

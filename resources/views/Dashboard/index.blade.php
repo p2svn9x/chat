@@ -2,6 +2,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="https://s4w.cdn.skype.com/0-245-0/images/favicon.ico" id="favicon">
     <meta property="og:image" content="https://s4w.cdn.skype.com/0-245-0/images/socialLogo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -193,96 +194,104 @@
                                 </swx-header>
                                 <div class="clearfix"></div>
                                 <div class="conversation">
-                                    <ul>
-                                        <div class="me-out">
-                                            <div class="img-me">
-                                                <div class="cover-img">
-                                                    <img src="img/img.png">
+                                    <div class="messageConversation" style="overflow: hidden; border: 1px solid #ff0000">
+                                        <ul>
+                                            <div class="me-out">
+                                                <div class="img-me">
+                                                    <div class="cover-img">
+                                                        <img src="img/img.png">
+                                                    </div>
+                                                </div>
+                                                <div class="me-message">
+                                                    <li class="me">By this User, First message</li>
                                                 </div>
                                             </div>
-                                            <div class="me-message">
-                                                <li class="me">By this User, First message</li>
-                                                <li class="me">By this User, Second message</li>
-                                                <li class="me">By this User, Third message</li>
-                                                <li class="me">By this User, Fourth message</li>
-                                                <li class="me">By this User, Fifth message</li>
-                                            </div>
-                                        </div>
-                                        <div class="him-out">
-                                            <div class="img-him">
-                                                <div class="cover-img">
-                                                    <img src="img/img.png">
+                                            <div class="him-out">
+                                                <div class="img-him">
+                                                    <div class="cover-img">
+                                                        <img src="img/img.png">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="him-message">
-                                                <li class="him">day any</li>
-                                                <li class="him">By Other User</li>
-                                                <li class="him">By Other User</li>
-                                                <li class="him">By Other User</li>
-                                                <li class="him">By Other User</li>
-                                                <li class="him">By Other User</li>
-                                            </div>
-                                        </div>
-                                        <div class="me-out">
-                                            <div class="img-me">
-                                                <div class="cover-img">
-                                                    <img src="img/img.png">
-                                                </div>
-                                            </div>
-                                            <div class="me-message">
-                                                <li class="me">By this User, First messageBy this User, First messageBy this User, First messageBy this User, First messageBy this User, First message</li>
-                                                <li class="me">By this User, Second message</li>
-                                                <li class="me">By this User, Third message</li>
-                                                <li class="me">By this User, Fourth message</li>
-                                                <li class="me">By this User, Fifth message</li>
-                                            </div>
-                                        </div>
-                                        <div class="him-out">
-                                            <div class="img-him">
-                                                <div class="cover-img">
-                                                    <img src="img/img.png">
-                                                </div>
-                                            </div>
-                                            <div class="him-message">
-                                                <li class="him">By Other UserBy Other UserBy Other UserBy Other UserBy Other UserBy Other User</li>
-                                                <li class="him">By Other UserBy Other UserBy Other UserBy Other UserBy Other UserBy Other UserBy Other UserBy Other UserBy Other UserBy Other UserBy Other UserBy Other User</li>
-                                                <li class="him">By Other User</li>
-                                                <li class="him">By Other User</li>
-                                            </div>
-                                        </div>
-                                        <div class="me-out">
-                                            <div class="img-me">
-                                                <div class="cover-img">
-                                                    <img src="img/img.png">
-                                                </div>
-                                            </div>
-                                            <div class="me-message">
-                                                <li class="me">By this User, Fourth message</li>
-                                                <li class="me">By this User, Fifth message</li>
-                                            </div>
-                                        </div>
-                                        <div class="him-out">
-                                            <div class="img-him">
-                                                <div class="cover-img">
-                                                    <img src="img/img.png">
-                                                </div>
-                                            </div>
-                                            <div class="him-message">
-                                                <li class="him">By Other User</li>
+                                                <div class="him-message">
+                                                    <li class="him">day any</li>
 
-                                            </div>
-                                        </div>
-                                        <div class="me-out">
-                                            <div class="img-me">
-                                                <div class="cover-img">
-                                                    <img src="img/img.png">
                                                 </div>
                                             </div>
-                                            <div class="me-message">
-                                                <li class="me">By this User, Fourth message</li>
+                                            <div class="me-out">
+                                                <div class="img-me">
+                                                    <div class="cover-img">
+                                                        <img src="img/img.png">
+                                                    </div>
+                                                </div>
+                                                <div class="me-message">
+                                                    <li class="me">By this User, First messageBy this User, First messageBy this User, First messageBy this User, First messageBy this User, First message</li>
+
+                                                </div>
                                             </div>
+                                            <div class="him-out">
+                                                <div class="img-him">
+                                                    <div class="cover-img">
+                                                        <img src="img/img.png">
+                                                    </div>
+                                                </div>
+                                                <div class="him-message">
+                                                    <li class="him">By Other UserBy Other UserBy Other UserBy Other UserBy Other UserBy Other User</li>
+
+                                                </div>
+                                            </div>
+                                            <div class="me-out">
+                                                <div class="img-me">
+                                                    <div class="cover-img">
+                                                        <img src="img/img.png">
+                                                    </div>
+                                                </div>
+                                                <div class="me-message">
+                                                    <li class="me">By this User, Fourth message</li>
+
+                                                </div>
+                                            </div>
+                                            <div class="him-out">
+                                                <div class="img-him">
+                                                    <div class="cover-img">
+                                                        <img src="img/img.png">
+                                                    </div>
+                                                </div>
+                                                <div class="him-message">
+                                                    <li class="him">By Other User</li>
+                                                </div>
+                                            </div>
+                                            <div class="me-out">
+                                                <div class="img-me">
+                                                    <div class="cover-img">
+                                                        <img src="img/img.png">
+                                                    </div>
+                                                </div>
+                                                <div class="me-message">
+                                                    <li class="me">By this User, Fourth message</li>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div class="mesOption">
+                                        <input type="text" id="inputMessges" placeholder="Type a message here">
+                                        <div class="buttonOption">
+                                            <button class="attachmentButton">
+                                                <span title="Attachment">
+                                                    <i class="fa fa-paperclip"></i>
+                                                </span>
+                                            </button>
+                                            <button class="emoticonsButton">
+                                                <span title="Emoticons">
+                                                   <i class="fa fa-smile-o"></i>
+                                                </span>
+                                            </button>
+                                            <button class="sendButton">
+                                                <span title="Send">
+                                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                                </span>
+                                            </button>
                                         </div>
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -294,6 +303,27 @@
     </div>
 </div>
 </div>
-</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    window.onresize = function() {
+        scaleFormChat(window.innerWidth, window.innerHeight);
+    }
+    window.onload = function(e) {
+        scaleFormChat(window.innerWidth, window.innerHeight);
+    };
+    function scaleFormChat(width, height) {
+        //widthRoster = $(".roster").width();
+        heightRoster = $(".roster").height();
+        messageConversation = $(".messageConversation .me-out").width();
+        console.log(messageConversation);
+        heightMessges = height - (heightRoster + 100);
+        widthMessges = messageConversation - 50;
 
+        $(".messageConversation").css("height", heightMessges);
+        $(".me-message").css("max-width", widthMessges);
+        $(".him-message").css("max-width", widthMessges);
+
+    }
+</script>
+</body>
 </html>
