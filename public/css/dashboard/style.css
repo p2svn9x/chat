@@ -1,0 +1,190 @@
+
+.fragmentsContainer .fragment .conversationControl .conversation {
+    margin-left: 30px;
+    width: auto;
+    /* border: 1px solid #f00; */
+    /* background: #f00; */
+    margin-top: 5px;
+}
+
+
+@media all and (max-width: 600px) {
+    .fragmentsContainer .fragment .conversationControl .conversation {margin-left: 2px;margin-top: 25px !important;}
+}
+
+@media all and (max-width: 732px) {
+    .fragmentsContainer .fragment .conversationControl .conversation {margin-left: 2px;margin-top: 50px;}
+}
+*{ margin:0px; padding:0px; font-family: Helvetica, Arial, sans-serif;}
+.conversation ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    float: left;
+}
+.conversation ul li{
+    display:inline-block;
+    clear: both;
+    padding: 10px 10px;
+    border-radius: 30px;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+.conversation .him{
+    background: #eee;
+    float: left;
+    margin-left:8px;
+}
+.conversation .me{
+    float: right;
+    background: #0084ff;
+    color: #fff;
+    margin-right:8px;
+}
+.conversation .him + .me{
+    border-bottom-right-radius: 5px;
+}
+.conversation .me + .me{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.conversation .me:last-of-type {
+    border-bottom-right-radius: 30px;
+}
+
+.conversation .him + .him{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.conversation li.him:last-of-type {
+    border-bottom-left-radius: 30px !important;
+}
+.conversation .him{
+    border-bottom-left-radius: 5px;
+}
+.conversation li.me:first-of-type {
+    border-bottom-right-radius: 0px!important;
+}
+.conversation li.me:last-child{
+
+    border-bottom-right-radius: 30px !important;
+}
+.conversation .me-out {
+    float:right;
+    max-width: 70%;
+    clear: both;
+    width: 100%;
+    position: relative;
+    min-height: 40px;
+    padding-top: 5px;
+}
+.conversation .me-out .img-me {
+    float:right;
+    width: 31px;
+    padding: 5px;
+}
+.conversation .me-out .img-me img {
+
+    width: 100%;
+}
+.conversation .me-out  .me-message {
+    float:right
+}
+
+
+.conversation .him-out {
+    float:left;
+    max-width: 70%;
+    clear:both;
+    width: 100%;
+    position: relative;
+    min-height: 40px;
+    padding-top: 5px;
+}
+.conversation .him-out .img-him {
+    float:left;
+    width: 30px;
+    padding: 5px;
+}
+
+.conversation .him-out .him-message {
+    float:left;
+    max-width: 90%;
+}
+.conversation .him-out .img-him img {
+
+    width: 100%;
+}
+
+.conversation .cover-img {
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    margin-top: 0px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #d4d1d1ab;
+    background: #fff;
+    position: absolute;
+    bottom: 4px;
+}
+
+.conversation .cover-img img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    object-fit: cover;
+    border-radius: 50%;
+    width: 34px;
+    height: 35px;
+}
+
+.conversation .me-out .cover-img {
+    margin-right: 3px;
+    right: 3px;
+}
+
+.conversation .him-out .cover-img {
+
+    left: 3px;
+}
+
+@media all and (max-width: 414px) {
+    .conversation .me-out {
+        float:right;
+        max-width: 88%;
+        clear: both;
+        width: 100%;
+        position: relative;
+
+    }
+    .conversation .him-out {
+        float:left;
+        max-width: 85%;
+        clear:both;
+        width: 100%;
+        position: relative;
+    }
+
+    .conversation .him-out {
+        float:left;
+        max-width: 85%;
+        clear:both;
+        width: 100%;
+        position: relative;
+
+    }
+    .conversation .him-out .him-message {
+        max-width: 85%;
+    }
+
+    .conversation .me-out .me-message {
+        max-width: 85%;
+    }
+}

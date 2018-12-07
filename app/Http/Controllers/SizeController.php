@@ -14,4 +14,9 @@ class SizeController extends AppController
             return redirect('/login');
         }
     }
+
+    protected function viewDashboard($view = 'index', $data =  array())
+    {
+        return $this->loadView('Dashboard/'.$view, $data);
+    }
 }
