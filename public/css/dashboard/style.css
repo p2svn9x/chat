@@ -194,28 +194,23 @@
 
 .conversation .mesOption {
     width: 100%;
-    /* background: #f00; */
     padding-top:10px
 
 }
 
 .conversation .mesOption .buttonOption {
     float:right;
-    /* width:100px; */
     margin-right: 0px;
 }
 
 .conversation .mesOption .buttonOption button {
 
     background: none;
-
     border: none;
-
     cursor: pointer;
-
     margin-right: 10px;
-
     float: left;
+    outline:none;
 }
 
 .conversation .mesOption .buttonOption button.sendButton {
@@ -225,6 +220,7 @@
     text-align: center;
     position: relative;
     background: #00AFF0;
+    cursor: pointer;
 
 }
 .conversation .mesOption .buttonOption button.sendButton:hover {
@@ -234,22 +230,119 @@
 .conversation .mesOption .buttonOption button.sendButton span {
 
     position:absolute;
-
     left: 11px;
-
     top: 13px;
-
     color: #fff;
-
     font-size: 14px;
 }
 
 .conversation .mesOption .buttonOption button.emoticonsButton {
     color:#00AFF0;
     font-size:18px;
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 45px;
     text-align: center;
     position: relative;
-    background:#f00
+    font-size: 23px;
+    margin-right: 10px;
+}
+
+.conversation .mesOption .buttonOption button.emoticonsButton i{
+    font-style:unset
+}
+
+.conversation .mesOption .buttonOption button.attachmentButton {
+    color:#00AFF0;
+    font-size:18px;
+    width: 30px;
+    height: 45px;
+    text-align: center;
+    position: relative;
+    font-size: 23px;
+    margin-right: 4px;
+}
+.conversation .mesOption #formMessage {
+    background:#f00;
+    float:left;
+    margin-top: 2px;
+}
+
+.conversation .mesOption #formMessage #inputMessages {
+    width: 100%;
+    display:block;
+    padding: 10px 5px 5px 5px;
+    font-size:14px;
+    font-weight: normal;
+    border:1px solid #98949469;
+    height: 43px;
+}
+
+::placeholder {
+    color: #02b0de;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #02b0de;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #02b0de;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 30px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f5fafc;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #565353;
+    /* border-radius: 30px; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.messageConversation {
+    overflow-y: scroll;
+    /* border: 1px solid #f00; */
+}
+
+.dateConversation {
+    display: block;
+    width: 100%;
+    clear: both;
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #f00;
+    margin: auto;
+}
+
+.dateConversation:before {
+    content: '';
+    position: absolute;
+    top: 64%;
+    left: 0;
+    border-top: 1px solid #e6dfdf;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.dateConversation p {
+    font-size: 14px !important;
+    background: #eeeeee;
+    width: auto;
+    max-width: 78px;
+    margin: auto;
+    color: #656060;
 }

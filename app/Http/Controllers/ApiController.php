@@ -48,8 +48,6 @@ class ApiController extends AppController
         echo json_encode($result);
     }
 
-
-
     public function respondData($data = null, $starus = 200, $message = "")
     {
         $resutl = array(
@@ -60,11 +58,4 @@ class ApiController extends AppController
         $this->respondJson($resutl);
     }
 
-    public function printData($data = array())
-    {
-        echo "<pre>";
-            print_r($data);
-        echo "</pre>";
-        exit;
-    }
 }

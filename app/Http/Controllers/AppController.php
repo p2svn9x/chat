@@ -8,15 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 class AppController extends Controller
 {
-    protected $user;
-    public function __construct()
-    {
-
-        $this->middleware(function ($request, $next) {
-            $this->user = Auth::user();
-            return $next($request);
-        });
-    }
 
     public function post($key = null, $default = null)
     {
@@ -90,5 +81,13 @@ class AppController extends Controller
     public function loadView($view = 'index', $data =  Array())
     {
         return View($view, $data);
+    }
+
+    public function printData($data = array())
+    {
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
+        exit;
     }
 }

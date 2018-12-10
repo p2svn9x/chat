@@ -46,7 +46,7 @@ function login() {
                 delete_cookie('remember');
             }
             setTimeout(function () {
-                //window.location.href = serverName + 'Console/Dashboard';
+                window.location.href = serverName + 'dashboard';
             }, 1000);
             //
         }

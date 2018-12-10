@@ -38,11 +38,14 @@ class LoginController extends ApiController
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        //$this->middleware('guest')->except('logout');
     }
 
     public function formLogin()
     {
+        if (Auth::check()) {
+            return redirect('/dashboard');
+        }
         return View('auth/login');
     }
 
@@ -67,6 +70,6 @@ class LoginController extends ApiController
     public function logout(Request $request)
     {
         Auth::logout();
-        //return redirect('/login');
+        return redirect('/login');
     }
 }
