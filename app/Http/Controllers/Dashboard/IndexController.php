@@ -15,7 +15,8 @@ class IndexController extends SizeController
     }
     public function index()
     {
-        $data =  $this->user;
         return $this->viewDashboard ('index');
     }
+
+    //public function demo1
 }

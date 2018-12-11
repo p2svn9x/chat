@@ -8,6 +8,7 @@ use App\Http\Controllers\ApiController;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\Exceptions\Generate;
 
 class LoginController extends ApiController
 {
@@ -46,11 +47,13 @@ class LoginController extends ApiController
         if (Auth::check()) {
             return redirect('/dashboard');
         }
+
         return View('auth/login');
     }
 
     public function login()
     {
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
         $text = 'Email or password is wrong.';
         $email = $this->post('email');
         $password = $this->post('password');
@@ -60,11 +63,14 @@ class LoginController extends ApiController
 
         if (!Auth::attempt(['email' => $email, 'password' => $password])) {
             $this->respondError($text);
-
         }
 
+        $generate = new Generate();
+        $user = User::find(Auth::user()->id);
+        $user->token = $generate->token(64);
+        $user->last_login = date('Y-m-d h:i:s');
+        $user->save();
         $this->respondLogin(Auth::user());
-        //exit;
     }
 
     public function logout(Request $request)

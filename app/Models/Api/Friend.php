@@ -1,12 +1,13 @@
 <?php
-namespace App\Models;
+namespace App\Models\Api;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
-class Articel extends Model
+class Friend extends Model
 {
-    protected $table = 'article';
+    protected $table = 'friends';
     protected $primaryKey = 'id';
-    public function category()
+    public function user()
     {
         return $this->belongsTo(User::class,'user_id', 'id');
 

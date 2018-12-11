@@ -1,0 +1,10 @@
+development:
+    dialect: mysql
+    datasource: root@/travel?parseTime=true
+    dir: migrations
+
+production:
+    dialect: mysql
+    datasource: mechanics:mechanics1@tcp(mechanics.cq2kgpsyi5d0.us-west-1.rds.amazonaws.com)/mechanics123?parseTime=true
+    dir: migrations
+    table: migrations

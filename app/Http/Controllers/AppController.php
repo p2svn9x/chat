@@ -90,4 +90,13 @@ class AppController extends Controller
         echo "</pre>";
         exit;
     }
+
+    public function requestReaders ($key = '')
+    {
+        $headers = apache_request_headers();
+        if(empty($key) || !isset($headers[$key])) {
+            return '';
+        }
+        return $headers[$key];
+    }
 }
