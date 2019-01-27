@@ -8,6 +8,7 @@ use Illuminate\View\View;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Response;
 
 class HahaController extends ApiController
 {
@@ -24,6 +25,13 @@ class HahaController extends ApiController
 
     public function demo()
     {
-        return $this->loadView('formLogin');
+
+       echo Hash::make("12345");
+       exit;
+    }
+
+    public function demo1()
+    {
+        return Response::json(['hello' => "dsd"],201);
     }
 }

@@ -28,8 +28,9 @@ class ApiController extends AppController
 
     }
 
-    public function respondJson($data = array())
+    public function respondJson($tatus = 200, $message = '', $data = array())
     {
+
         header('Content-Type: application/json');
         echo json_encode($data);
         exit();
