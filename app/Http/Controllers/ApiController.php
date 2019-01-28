@@ -40,8 +40,10 @@ class ApiController extends AppController
             'code' => $code,
             'data' => $data
         );
-
-        return response($responseData, (int)$status);
+        http_response_code ($status);
+        echo json_encode($responseData);
+        exit;
+        //return response($responseData, (int)$status);
     }
 
     protected function respondAuthorized($message = 'You do not have access', $status = 401, $code = 1, $data = null)
@@ -63,7 +65,6 @@ class ApiController extends AppController
     {
         return $this->respondJson($message, $code, $status, $data);
     }
-
 
     public function respondData($data = null, $starus = 200, $message = "")
     {

@@ -39,7 +39,14 @@ class LoginController extends ApiController
         $user->last_login = date('Y-m-d h:i:s');
         $user->save();
       /// dd(Auth::user());
-        return $this->responData(Auth::user());
+       // return $this->responData(Auth::user());
+        $responseData = array(
+            'status' => 200,
+            'message' => '',
+            'code' => 0,
+            'data' => null
+        );
+        return response($responseData, 200);
     }
 
     public function checkUser($email, $password)
