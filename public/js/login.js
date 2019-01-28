@@ -21,7 +21,7 @@ function login() {
     $("span.error").html('');
 
     $.ajax({
-        url: serverName + 'login',
+        url: serverName + 'api/login',
         type: "post",
         dateType: "json",
         data: {

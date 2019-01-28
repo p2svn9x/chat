@@ -22,6 +22,6 @@ Route::get('conme/test3', 'HahaController@demo');
 Route::get('conme/test2', 'HahaController@demo1');
 
 Route::get('/login', '\App\Http\Controllers\Auth\LoginController@formLogin')->name('login');
-Route::post('/login', '\App\Http\Controllers\Auth\LoginController@login');
+//Route::post('/login', '\App\Http\Controllers\Auth\LoginController@login');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
