@@ -54,17 +54,22 @@ class LoginController extends ApiController
     public function login()
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
-        $text = 'Email or password is wrong.';
+        $text = 'Email hoạc mật khẩu sai';
         $email = $this->post('email');
         $password = $this->post('password');
         if (empty($email) || empty($password)) {
-            $this->respondError('Email and password cannot be blank.');
+            $this->respondError('Email và mật khẩu không được bỏ trống');
+        }
+
+        $result = $this->checkUser($email, $password);
+        if (empty($result)) {
+            $this->respondError($text);
         }
 
         if (!Auth::attempt(['email' => $email, 'password' => $password])) {
             $this->respondError($text);
         }
-
+        $this->responData(Auth::user());
         $generate = new Generate();
         $user = User::find(Auth::user()->id);
         $user->token = $generate->token(64);
@@ -77,5 +82,23 @@ class LoginController extends ApiController
     {
         Auth::logout();
         return redirect('/login');
+    }
+
+    public function checkUser($email, $password)
+    {
+        $user = User::where([['email', $email]])->get(['password', 'status', 'block'])->first();//->toArray();
+        if (!Hash::check($password, $user->password)) {
+            return false;
+        }
+
+        if (empty($user->status)) {
+            return $this->respondError("Tải khoản chưa được kích hoạt vùi lòng vào email để kích hoạt tài khoản");
+        }
+
+        if ($user->block == 1) {
+            return $this->respondError("Tải khoản của bạn đan bị khóa ");
+        }
+
+        return true;
     }
 }

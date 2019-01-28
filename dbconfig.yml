@@ -1,6 +1,6 @@
 development:
     dialect: mysql
-    datasource: root@/travel?parseTime=true
+    datasource: root@/shop?parseTime=true
     dir: migrations
 
 production:

@@ -28,46 +28,42 @@ class ApiController extends AppController
 
     }
 
-    public function respondJson($tatus = 200, $message = '', $data = array())
-    {
-
-        header('Content-Type: application/json');
-        echo json_encode($data);
-        exit();
-    }
-
-    protected function respondAuthorized($message = 'You do not have access', $status = 401, $data = null)
-    {
-        return $this->respondJson(array('status' => $status, 'message' => $message, "data" => $data));
-    }
-
-    protected function responData($data = null, $message = 'Success', $status = 200)
+    public function respondJson($message = '', $code = 0, $status = 200,$data = array())
     {
         if (empty($data)) {
-            $data = null;
+           $data = null;
         }
-        return $this->respondJson(array('status' => $status, 'message' => $message, "data" => $data));
-    }
 
-    protected function respondStatus($message = 'Success', $status = 200, $data = null)
-    {
-        return $this->respondJson(array('status' => $status, 'message' => $message, "data" => $data));
-    }
-
-    protected function respondError($message = 'Your session has expired. Please login again.', $status = 400, $data = null)
-    {
-        return $this->respondJson(array('status' => $status, 'message' => $message, "data" => $data));
-    }
-
-    public function respondLogin($data = null, $starus = 200, $message = "")
-    {
-        $result = array(
-            "status" => $starus,
-            "message" => $message,
-            "data" => $data,
+        $responseData = array(
+            'status' => $status,
+            'message' => $message,
+            'code' => $code,
+            'data' => $data
         );
-        echo json_encode($result);
+
+        return response($responseData, (int)$status);
     }
+
+    protected function respondAuthorized($message = 'You do not have access', $status = 401, $code = 1, $data = null)
+    {
+        return $this->respondJson($message, $code, $status, $data);
+    }
+
+    protected function responData($data = null, $code = 0, $message = 'Success', $status = 200)
+    {
+        return $this->respondJson($message, $code, $status, $data);
+    }
+
+    protected function respondStatus($message = 'Success', $status = 200, $code = 0, $data = null)
+    {
+        return $this->respondJson($message, $code, $status, $data);
+    }
+
+    protected function respondError($message = 'Your session has expired. Please login again.', $status = 400, $code = 1, $data = null)
+    {
+        return $this->respondJson($message, $code, $status, $data);
+    }
+
 
     public function respondData($data = null, $starus = 200, $message = "")
     {
