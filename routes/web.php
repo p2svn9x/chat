@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 require 'dashboard/route.php';
 require 'api/routes.php';
+require 'console.php';
 //Route::get('/dashboard', 'HomeController@index' );
 Route::get('conme/test1', 'HahaController@index');
 Route::get('conme/test3', 'HahaController@demo');
