@@ -66,7 +66,7 @@ class LoginController extends ApiController
         }
 
         if ($user->block == 1) {
-            return 'Tải khoản của bạn đan bị khóa';
+            return 'Tải khoản của bạn đang bị khóa';
         }
 
         return 1;

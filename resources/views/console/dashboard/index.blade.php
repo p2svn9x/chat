@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HOE Responsive Bootstrap sidebar Menu</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/hoe.css" rel="stylesheet">
 
 </head>
-
 <body>
 <div id="hoeapp-wrapper" class="hoe-hide-lpanel" hoe-device-type="desktop">
     <header id="hoe-header" hoe-lpanel-effect="shrink">
@@ -138,89 +136,6 @@
                                 <span class="notification-title">Application Configured</span>
                                 <span class="notification-ago  ">30 min ago</span>
                                 <p class="notification-message">Your setting is updated on server Sav3060</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="clearfix">
-                                <i class="fa fa-server blue-text"></i>
-                                <span class="notification-title">Server Status</span>
-                                <span class="notification-ago  ">300GB Free Space</span>
-                                <p class="notification-message">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" style="width:80%">
-                                        Free Space
-                                    </div>
-                                </div>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="clearfix">
-                                <i class="fa fa-server blue-text"></i>
-                                <span class="notification-title">Server Status</span>
-                                <span class="notification-ago  ">300GB Free Space</span>
-                                <p class="notification-message">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" style="width:80%">
-                                        Free Space
-                                    </div>
-                                </div>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="clearfix">
-                                <i class="fa fa-server blue-text"></i>
-                                <span class="notification-title">Server Status</span>
-                                <span class="notification-ago  ">300GB Free Space</span>
-                                <p class="notification-message">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" style="width:80%">
-                                        Free Space
-                                    </div>
-                                </div>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="clearfix">
-                                <i class="fa fa-server blue-text"></i>
-                                <span class="notification-title">Server Status</span>
-                                <span class="notification-ago  ">300GB Free Space</span>
-                                <p class="notification-message">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" style="width:80%">
-                                        Free Space
-                                    </div>
-                                </div>
-                                </p>
-                            </a>
-                        </li> <li>
-                            <a href="#" class="clearfix">
-                                <i class="fa fa-server blue-text"></i>
-                                <span class="notification-title">Server Status</span>
-                                <span class="notification-ago  ">300GB Free Space</span>
-                                <p class="notification-message">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" style="width:80%">
-                                        Free Space
-                                    </div>
-                                </div>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="clearfix">
-                                <i class="fa fa-server blue-text"></i>
-                                <span class="notification-title">Server Status</span>
-                                <span class="notification-ago  ">300GB Free Space</span>
-                                <p class="notification-message">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" style="width:80%">
-                                        Free Space
-                                    </div>
-                                </div>
-                                </p>
                             </a>
                         </li>
                         <li>
@@ -367,202 +282,55 @@
                                 <span class="selected"></span>
                             </a>
                         </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">Login</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">User Profile</span>
-                                <span class="label sul">Updated</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">Team Member</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">Time Line</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="hoe-has-menu">
-                    <a href="javascript:void(0)">
-                        <i class="fa fa-envelope-o"></i>
-                        <span class="menu-text">Email Templates</span>
-                        <span class="selected"></span>
-                    </a>
-                    <ul class="hoe-sub-menu">
 
-                        <li class="hoe-has-menu">
+                    </ul>
+                </li>
+                <li class="hoe-has-menu">
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-files-o"></i>
+                        <span class="menu-text">Other Pages</span>
+                        <span class="selected"></span>
+                    </a>
+                    <ul class="hoe-sub-menu">
+                        <li>
                             <a href="javascript:void(0)">
-                                <span class="menu-text">Inbox </span>
+                                <span class="menu-text">Blank Page</span>
                                 <span class="selected"></span>
                             </a>
-                            <ul class="hoe-sub-menu">
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <span class="menu-text">Inbox v1</span>
-                                        <span class="selected"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <span class="menu-text">Inbox v2</span>
-                                        <span class="selected"></span>
-                                    </a>
-                                </li>
+                        </li>
 
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">Detail</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">Compose</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">Send</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">Draft</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
                     </ul>
                 </li>
-                <li class="nav-level">Components</li>
                 <li class="hoe-has-menu">
                     <a href="javascript:void(0)">
-                        <i class="fa fa-pencil-square-o"></i>
-                        <span class="menu-text">UI Elements</span>
+                        <i class="fa fa-files-o"></i>
+                        <span class="menu-text">Other Pages</span>
                         <span class="selected"></span>
                     </a>
                     <ul class="hoe-sub-menu">
                         <li>
                             <a href="javascript:void(0)">
-                                <span class="menu-text">Icon</span>
+                                <span class="menu-text">Blank Page</span>
                                 <span class="selected"></span>
                             </a>
                         </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">Buttons</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">Tabs & Panel</span>
-                                <span class="label sul">Updated</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">Notification</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">Typography</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
-                <li>
-                    <a href="javascript:void(0)">
-                        <i class="fa fa-table"></i>
-                        <span class="menu-text">Table</span>
-                        <span class="selected"></span>
-                    </a>
-                </li>
-                <li class="nav-level">Menu Lavel</li>
                 <li class="hoe-has-menu">
                     <a href="javascript:void(0)">
-                        <i class="fa fa-sitemap"></i>
-                        <span class="menu-text">Menu Lavel 1</span>
+                        <i class="fa fa-files-o"></i>
+                        <span class="menu-text">Other Pages</span>
                         <span class="selected"></span>
                     </a>
                     <ul class="hoe-sub-menu">
                         <li>
                             <a href="javascript:void(0)">
-                                <span class="menu-text">level 2</span>
+                                <span class="menu-text">Blank Page</span>
                                 <span class="selected"></span>
                             </a>
                         </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">level 2</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                        <li class="hoe-has-menu">
-                            <a href="javascript:void(0)">
-                                <span class="menu-text">level 2</span>
-                                <span class="selected"></span>
-                            </a>
-                            <ul class="hoe-sub-menu">
-                                <li class="hoe-has-menu">
-                                    <a href="javascript:void(0)">
-                                        <span class="menu-text">level 3</span>
-                                        <span class="selected"></span>
-                                    </a>
-                                    <ul class="hoe-sub-menu">
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="menu-text">level 4</span>
-                                                <span class="selected"></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <span class="menu-text">level 4</span>
-                                                <span class="selected"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <span class="menu-text">level 3</span>
-                                        <span class="selected"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <span class="menu-text">level 3</span>
-                                        <span class="selected"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <span class="menu-text">level 3</span>
-                                        <span class="selected"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </li>
             </ul>
@@ -677,9 +445,12 @@
     </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="js/1.11.2.jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
 <script src="js/hoe.js"></script>
 </body>
+
+
+<!-- Mirrored from gohooey.com/demo/sidebar/bootstrapnavigation/hoedemo.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Jun 2016 18:35:07 GMT -->
 </html>

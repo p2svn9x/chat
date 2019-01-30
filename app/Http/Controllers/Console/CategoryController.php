@@ -5,12 +5,18 @@ namespace App\Http\Controllers\Console;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class CategoryControler extends ConsoleController
+class CategoryController extends ConsoleController
 {
 
     public function list()
     {
 
+    }
+
+    public function index()
+    {
+        echo "Dsd";
+        exit;
     }
 
 }

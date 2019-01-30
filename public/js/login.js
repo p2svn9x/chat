@@ -49,6 +49,10 @@ function login() {
                 window.location.href = serverName + 'dashboard';
             }, 1000);
             //
+        },
+        error(result) {
+            obj = parseJson(result.responseText);
+            $("span#errorLogin").html(obj.message);
         }
     });
 }
