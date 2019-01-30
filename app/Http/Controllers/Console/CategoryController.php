@@ -8,15 +8,14 @@ use Illuminate\View\View;
 class CategoryController extends ConsoleController
 {
 
-    public function list()
-    {
-
-    }
+//    public function list()
+//    {
+//
+//    }
 
     public function index()
     {
-        echo "Dsd";
-        exit;
+        return $this->viewConsole('category/list');
     }
 
 }
