@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/hoe.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
 </head>
 <body>
@@ -27,7 +28,9 @@
             </div>
             <div class="inner-content">
                 <div class="panel theme-panel">
-                    @yield('content')
+                    <div class="panel-body">
+                        @yield('content')
+                    </div>
                 </div>
             </div>
         </section>
@@ -36,5 +39,6 @@
 <script src="js/1.11.2.jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/hoe.js"></script>
+<script src="js/console.js"></script>
 </body>
 </html>
