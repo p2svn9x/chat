@@ -28,6 +28,7 @@ class ConsoleController extends AppController
     public function viewConsole($view, $data = array())
     {
         $data['user'] = $this->user;
+        $data['time'] = time();
         //$this->printData($data['user']->email);
         return $this->loadView("console/" . $view, $data);
     }

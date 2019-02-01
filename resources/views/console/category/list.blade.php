@@ -24,7 +24,6 @@
             </thead>
             <tbody>
 
-
             </tbody>
         </table>
         <div class="ountPagination">
@@ -33,5 +32,5 @@
         </div>
     </div>
     @include('console.category.from')
+    <script src="js/category.js?v={{$time}}"></script>
 @endsection
-<script src="js/category.js"></script>

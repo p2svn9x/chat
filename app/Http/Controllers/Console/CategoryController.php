@@ -25,4 +25,6 @@ class CategoryController extends ConsoleController
     {
         return Category::where([['type', $type],['parent', 0]])->orderBy('sort')->get(['id', 'name', 'status', 'parent', 'sort'])->toArray();
     }
+
+
 }

@@ -1,21 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Array_;
 use App\Models\User;
+use App\Http\Controllers\AppController;
 class ApiController extends AppController
 {
     protected $user;
     public function __construct()
     {
-//        $this->middleware(function ($request, $next) {
-//            $this->user = Auth::user();
-//            return $next($request);
-//        });
+        $this->middleware(function ($request, $next) {
+            $this->user = Auth::user();
+            if (empty($this->user)) {
+
+               return $this->respondAuthorized();
+            }
+            return $next($request);
+        });
     }
 
     public function checkLogin()
@@ -68,12 +73,8 @@ class ApiController extends AppController
 
     public function respondData($data = null, $starus = 200, $message = "")
     {
-        $resutl = array(
-            "status" => $starus,
-            "message" => $message,
-            "data" => $data,
-        );
-        $this->respondJson($resutl);
+
+        $this->respondJson($data);
     }
 
     public function getUser($token)

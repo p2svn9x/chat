@@ -11,6 +11,9 @@
 
 </head>
 <body>
+<script>
+    var serverName = location.origin+"/";
+</script>
 <div id="hoeapp-wrapper" class="hoe-hide-lpanel" hoe-device-type="desktop">
     <header id="hoe-header" hoe-lpanel-effect="shrink">
         <div class="hoe-left-header">
@@ -36,9 +39,11 @@
         </section>
     </div>
 </div>
+<div id="fromloading"></div>
 <script src="js/1.11.2.jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/hoe.js"></script>
-<script src="js/console.js"></script>
+<script src="js/hoe.js"></script>
+<script src="../js/all.js"></script>
 </body>
 </html>
