@@ -9,7 +9,7 @@
         </li>
         <li>
             <a href="#" class="clearfix">
-                <img alt="Avatar" class="img-circle notification-avatar" src="images/avatar-1.jpg">
+                <img alt="Avatar" class="img-circle notification-avatar" src="{{URL::to('/console')}}/images/avatar-1.jpg">
                 <span class="notification-title"> Smith Doe Assigned new task </span>
                 <span class="notification-ago-1 ">5 min ago</span>
                 <p class="notification-message">Provide an Overview key mention characteristics for selected Keyword.</p>
@@ -17,7 +17,7 @@
         </li>
         <li>
             <a href="#" class="clearfix">
-                <img alt="Avatar" class="img-circle notification-avatar" src="images/avatar-2.jpg">
+                <img alt="Avatar" class="img-circle notification-avatar" src="{{URL::to('/console')}}/images/avatar-2.jpg">
                 <span class="notification-title"> Polly Paton Done his work</span>
                 <span class="notification-ago-1 ">10 min ago</span>
                 <p class="notification-message">Polly Paton has completed his work. please assign her new task. </p>
@@ -25,7 +25,7 @@
         </li>
         <li>
             <a href="#" class="clearfix">
-                <img alt="Avatar" class="img-circle notification-avatar" src="images/avatar-5.jpg">
+                <img alt="Avatar" class="img-circle notification-avatar" src="{{URL::to('/console')}}/images/avatar-5.jpg">
                 <span class="notification-title">Alan Installing App v1.2.1</span>
                 <span class="notification-ago-1 ">15 min ago</span>
                 <p class="notification-message">
@@ -40,7 +40,7 @@
         </li>
         <li>
             <a href="#" class="clearfix">
-                <img alt="Avatar" class="img-circle notification-avatar" src="images/avatar-4.jpg">
+                <img alt="Avatar" class="img-circle notification-avatar" src="{{URL::to('/console')}}/images/avatar-4.jpg">
                 <span class="notification-title"> Zoey Lombardo like your task</span>
                 <span class="notification-ago-1 ">20 min ago</span>
                 <p class="notification-message">Zoey Lombardo like your server installation task.</p>

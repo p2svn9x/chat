@@ -7,6 +7,7 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Array_;
 use App\Models\User;
+use App\Exceptions\PathAuth;
 use App\Http\Controllers\AppController;
 class ApiController extends AppController
 {
@@ -15,8 +16,9 @@ class ApiController extends AppController
     {
         $this->middleware(function ($request, $next) {
             $this->user = Auth::user();
-            if (empty($this->user)) {
-
+            $pathAuth = new PathAuth();
+            $checkPath = $pathAuth->checkPath();
+            if (empty($this->user) && empty($checkPath)) {
                return $this->respondAuthorized();
             }
             return $next($request);
@@ -31,50 +33,6 @@ class ApiController extends AppController
         }
         $this->getUser($token);
 
-    }
-
-    public function respondJson($message = '', $code = 0, $status = 200,$data = array())
-    {
-        if (empty($data)) {
-           $data = null;
-        }
-
-        $responseData = array(
-            'status' => $status,
-            'message' => $message,
-            'code' => $code,
-            'data' => $data
-        );
-        http_response_code ($status);
-        echo json_encode($responseData);
-        exit;
-        //return response($responseData, (int)$status);
-    }
-
-    protected function respondAuthorized($message = 'You do not have access', $status = 401, $code = 1, $data = null)
-    {
-        return $this->respondJson($message, $code, $status, $data);
-    }
-
-    protected function responData($data = null, $code = 0, $message = 'Success', $status = 200)
-    {
-        return $this->respondJson($message, $code, $status, $data);
-    }
-
-    protected function respondStatus($message = 'Success', $status = 200, $code = 0, $data = null)
-    {
-        return $this->respondJson($message, $code, $status, $data);
-    }
-
-    protected function respondError($message = 'Your session has expired. Please login again.', $status = 400, $code = 1, $data = null)
-    {
-        return $this->respondJson($message, $code, $status, $data);
-    }
-
-    public function respondData($data = null, $starus = 200, $message = "")
-    {
-
-        $this->respondJson($data);
     }
 
     public function getUser($token)

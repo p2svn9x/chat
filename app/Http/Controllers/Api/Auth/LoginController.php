@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\Auth;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\Api\ApiController;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +13,7 @@ use App\Exceptions\Generate;
 class LoginController extends ApiController
 {
     use AuthenticatesUsers;
+
     public function email()
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');

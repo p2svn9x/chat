@@ -5,10 +5,11 @@
             <?php
             echo '<option value="0">Danh mục cha</option>';
             foreach ($categorys as $category ) {
-                if ($category['parent'] != 0) {
-                    continue;
-                }
+
                 echo '<option value="'.$category['id'].'" id="location'.$category['id'].'" class ="selectLocation"> '.$category['name'].'</option>';
+                foreach ($category['children'] AS $value) {
+                    echo '<option value="'.$value['id'].'" id="location'.$value['id'].'" class ="selectLocation"> &#151 '.$value['name'].'</option>';
+                }
             }
             ?>
         </select>
@@ -40,5 +41,5 @@
     </div>
     <input type="hidden" class="form-control input_add_item" id="idCatefory" value="0"/>
     <button type="button" class="btn btn-primary" id="add_item" onclick="saveCategory()">Lưu lại</button>
-    <button type="submit" class="btn btn-default" onclick="cancel()">Hủy</button>
+    <button type="submit" class="btn btn-default" onclick="closeItem()">Hủy</button>
 </div>

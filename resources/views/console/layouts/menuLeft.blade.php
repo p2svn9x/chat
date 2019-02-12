@@ -2,7 +2,7 @@
     <div class="profile-box">
         <div class="media">
             <a class="pull-left" href="user-profile.html">
-                <img class="img-circle" src="images/avatar-1.jpg">
+                <img class="img-circle" src="{{URL::to('/console')}}/images/avatar-1.jpg">
             </a>
             <div class="media-body">
                 <h5 class="media-heading">{{$user->name}}</h5>
@@ -19,13 +19,21 @@
                 <span class="selected"></span>
             </a>
         </li>
-        <li>
-            <a href="{{URL::route('console/category')}}">
+        <li  class="hoe-has-menu">
+            <a href="javascript:void(0)">
                 <i class="fa fa-bar-chart"></i>
-                <span class="menu-text">Graphs</span>
-                <span class="label sul">New</span>
+                <span class="menu-text">Danh mục</span>
                 <span class="selected"></span>
             </a>
+            <ul class="hoe-sub-menu">
+                <li>
+                    <a href="{{URL::route('console/category/product')}}">
+                        <span class="menu-text">Sản phẩm</span>
+                        <span class="selected"></span>
+                    </a>
+                </li>
+
+            </ul>
         </li>
         <li class="hoe-has-menu">
             <a href="javascript:void(0)">

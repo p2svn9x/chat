@@ -14,26 +14,5 @@ class CategorysController extends ApiController
         parent::__construct();
     }
 
-    public function save($id)
-    {
-        $parent = $this->post('parentCa');
-        $typeCa = $this->post('typeCa');
-        $nameCa = $this->post('nameCa');
-        $customIcon = $this->post('customIcon');
-        $customLink = $this->post('customLink');
-        $textError = array();
 
-        if(empty($nameCa)) {
-            $textError[] = 'Tên danh mục';
-        }
-
-        if (empty($parant) && empty($customIcon)) {
-            $textError[] = 'Icon';
-        }
-
-        if (!empty($textError)) {
-            $this->respondError( implode(", ",$textError));
-        }
-
-    }
 }

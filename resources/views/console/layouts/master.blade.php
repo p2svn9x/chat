@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/hoe.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ URL::asset('console/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('console/css/hoe.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('console/css/style.css') }}">
+    <script src="{{ asset('console/js/1.11.2.jquery.min.js') }}"></script>
+    <script src="{{ asset('console/js/bootstrap.min.js') }}"></script>
 </head>
 <body>
 <script>
@@ -40,10 +42,8 @@
     </div>
 </div>
 <div id="fromloading"></div>
-<script src="js/1.11.2.jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/hoe.js"></script>
-<script src="js/hoe.js"></script>
-<script src="../js/all.js"></script>
+
+<script src="{{ asset('console/js/hoe.js') }}"></script>
+<script src="{{ asset('js/all.js') }}"></script>
 </body>
 </html>

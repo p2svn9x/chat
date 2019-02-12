@@ -1,4 +1,3 @@
-
 function addItem() {
     $("#list_item").slideUp(100);
     $("#additem").slideDown(100);
@@ -13,7 +12,7 @@ function closeItem() {
     $("#danger_nam").html("");
     $("button#add_item").prop("disabled", false);
     $("#userTitile").fadeIn();
-    imgUrl = serverName+'public/images/logo.png';
+    imgUrl = serverName + 'public/images/logo.png';
     $("#imgLogo").attr('src', imgUrl);
     $("#dangerStatus").fadeOut(1);
 }
@@ -42,20 +41,23 @@ function showFomoad() {
 function hideFomoad() {
     $("#fromloading").fadeOut(1);
 }
+
 function selectFileAttach() {
-    $( "#fileAttach" ).trigger( "click" );
+    $("#fileAttach").trigger("click");
 
 }
 
 
 function authorization() {
-    
+
 }
 
 
 var timeAlert = 0;
+
 function errorMessage(message) {
 
+    hideFomoad();
     $('#dangerStatus').removeClass("alert-success");
     $('#dangerStatus').addClass("alert-danger");
     $('#dangerStatus').fadeIn();
@@ -67,7 +69,7 @@ function errorMessage(message) {
 }
 
 function successMessage(message) {
-
+    hideFomoad();
     $("#dangerStatus").removeClass("alert-danger");
     $("#dangerStatus").addClass("alert-success");
     $("#dangerStatus").fadeIn();
@@ -75,6 +77,30 @@ function successMessage(message) {
     cleartTimeOutAlert(timeAlert);
     timeAlert = setTimeout(function () {
         $('#dangerStatus').fadeOut(1);
+    }, 5000);
+}
+
+function dangerEroor(message) {
+    hideFomoad();
+    $("#danger_alert").removeClass("alert-success");
+    $("#danger_alert").addClass("alert-danger");
+    $("#danger_alert").fadeIn();
+    cleartTimeOutAlert(timeAlert);
+    $("#alert_nam").html(message);
+    timeAlert = setTimeout(function () {
+        $("#danger_alert").fadeOut(1);
+    }, 5000);
+}
+
+function dangerSuccess(message) {
+    hideFomoad();
+    $("#danger_alert").removeClass("alert-danger");
+    $("#danger_alert").addClass("alert-success");
+    $("#danger_alert").fadeIn();
+    $("#danger_alert span").html(message);
+    cleartTimeOutAlert(timeAlert);
+    timeAlert = setTimeout(function () {
+        $("#danger_alert").fadeOut(1);
     }, 5000);
 }
 
@@ -86,24 +112,26 @@ function cleartTimeOutAlert(timeCleart) {
 
 function activeMenuLeft(id) {
     $(".panel-list li").removeClass('active');
-    $(".panel-list li#"+id).addClass('active');
+    $(".panel-list li#" + id).addClass('active');
     //menuLeftUser
 }
 
-function setCookie(cname,cvalue) {
+function setCookie(cname, cvalue) {
     var d = new Date();
-    d.setTime(d.getTime() + (30*24*60*60*1000));
+    d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-var delete_cookie = function(name) {
+
+var delete_cookie = function (name) {
     document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 };
+
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
+    for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
@@ -142,40 +170,39 @@ function pagination(page, totalPage, url, urlSeo, id) {
     }
     page = parseInt(page);
     nextPage = page - 4;
-    prevPage = page +5;
+    prevPage = page + 5;
 
     pre = totalPage - page;
     if (pre < 10 && totalPage > 10) {
-        nextPage =  totalPage - 10;
+        nextPage = totalPage - 10;
     }
     if (nextPage < 1) {
-        prevPage = (prevPage - nextPage) + 1 ;
+        prevPage = (prevPage - nextPage) + 1;
         nextPage = 1;
 
     }
-    seo = "/"+urlSeo;
-    idCa = "/"+id;
+    seo = "/" + urlSeo;
+    idCa = "/" + id;
     if (!urlSeo) {
         seo = ''
         idCa = '';
     }
-    for(i = 1; i <= totalPage; i ++) {
-        if (i < nextPage || i > prevPage ) {
+    for (i = 1; i <= totalPage; i++) {
+        if (i < nextPage || i > prevPage) {
             continue;
         }
-		var catetour = getUrlParameter('cate');
-		if(catetour!="")
-			catetour = "?cate="+ catetour;
-		else catetour = "";
-        itemPage = '<li><a href="'+serverName+url+'/'+i+idCa+seo+catetour+'">'+i+'</a></li>';
+        var catetour = getUrlParameter('cate');
+        if (catetour != "")
+            catetour = "?cate=" + catetour;
+        else catetour = "";
+        itemPage = '<li><a href="' + serverName + url + '/' + i + idCa + seo + catetour + '">' + i + '</a></li>';
         if (i == page) {
-            itemPage = '<li class="disabled"><a>'+i+'</a></li>';
+            itemPage = '<li class="disabled"><a>' + i + '</a></li>';
         }
 
         $(".ountPagination .pagination").append(itemPage);
     }
 }
-
 
 
 function valiEmail(email) {

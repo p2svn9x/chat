@@ -1,6 +1,6 @@
 .imgUser
 {
-	padding: 3px;
+    padding: 3px;
     width: 86px;
     background: #e8e3e3;
 }
@@ -751,5 +751,11 @@ input.cmn-toggle-yes-no:checked + label:after {
     background-color: #ededea;
 }
 #danger_alert {
-    width:85% !important;
+    /* width:85% !important; */
+}
+
+#add_item {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
