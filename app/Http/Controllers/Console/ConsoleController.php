@@ -17,20 +17,17 @@ class ConsoleController extends AppController
         $this->middleware(function ($request, $next) {
             $this->user = Auth::user();
             if (empty($this->user)) {
-
                 return redirect()->route('login');
             }
             return $next($request);
         });
-
     }
 
     public function viewConsole($view, $data = array())
     {
         $data['user'] = $this->user;
+        $data['time'] = time();
         //$this->printData($data['user']->email);
         return $this->loadView("console/" . $view, $data);
     }
-
-
 }

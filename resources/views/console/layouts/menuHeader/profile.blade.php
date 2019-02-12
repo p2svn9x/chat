@@ -1,7 +1,7 @@
 <ul class="right-navbar">
     <li class="dropdown hoe-rheader-submenu hoe-header-profile">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <span><img class="img-circle " src="images/avatar-1.jpg"></span>
+            <span><img class="img-circle " src="{{URL::to('/console')}}/images/avatar-1.jpg"></span>
             <span>{{$user->name}} <i class=" fa fa-angle-down"></i></span>
         </a>
         <ul class="dropdown-menu ">
