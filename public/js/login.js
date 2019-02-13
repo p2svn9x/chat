@@ -59,15 +59,14 @@ function login() {
 
 function setRemember() {
 
-    $("#username").val(getCookie('username'));
-    $("#password").val(getCookie('password'));
+    $("#loginEmail").val(getCookie('username'));
+    $("#loginPassword").val(getCookie('password'));
     remember = getCookie('remember');
 
     if (remember == 1) {
         $("#remember").prop('checked', true)
     }
 }
-
 
 function forgotPassword() {
 
@@ -116,19 +115,3 @@ function closeDialogForgot() {
     $("#aLogin").trigger( "click" );
     $('#dialogForgot').modal('hide');
 }
-
-// function valiEmail(email) {
-//
-//     if (!email) {
-//         return 'Email cannot be blank.';
-//     }
-//
-//     filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,6})+$/; // bo loc filter
-//
-//     if (!filter.test(email)) {
-//
-//         return 'Email is invalid.';
-//     }
-//
-//     return true;
-// }

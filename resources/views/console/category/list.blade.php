@@ -1,86 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cropper.js</title>
+    <link rel="stylesheet" href="{{ URL::asset('console/css/cropper.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .container {
+            max-width: 640px;
+            margin: 20px auto;
+        }
 
-@extends('console.layouts.master')
-@section('title', 'Category')
-@section('breadcrumb','Category')
-@section('content')
-    <div id="list_item" style="display: block;">
-        <button type="button" class="btn btn-primary" id="add_item" onclick="addItem();">
-            <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm mới
-        </button>
-        <div class="alert alert-success" id="danger_alert"
-             style="display: none;padding:7px;margin: 0px; width: 85%;float: right;">
-            <strong></strong> <span id="alert_nam"></span>
-        </div>
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th>STT.</th>
-                <th style="width: 80%">Tiều đề</th>
-                <th class="viewMobile viewMobile1Adddress">Sắp xếp</th>
-                <th class="status_item">Trạng thái</th>
-                <th class="status_edit" colspan="2">Tùy chọn</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            $stt = 1;
-            foreach ($list AS $k => $v) {
 
-                $status = 'checked';
-                if (empty($v['status'])) {
-                    $status = '';
-                }
-                $name = $v["name"];
-                if (!empty($v['parentName'])) {
-                    $name = $v['parentName'].' <i class="fa fa-long-arrow-right"></i> '.$v["name"];
-                }
-                echo '
-                                    <tr id="colum'.$k.'">
-                                        <td class="name_item stt" width="10px">'.$stt.'</td>
-                                        <td class="name_item">'. $name.'</td>
-
-                                        <td class="name_item viewMobile viewMobile1Logo" width="80">
-                                            <input type="text" class="form-control sort" onblur="updateSort(' . $v['id'] . ', this)" rel="' . $v['id'] . '" value="' . $v['sort'] . '" />
-                                        </td>
-                                       <td class="name_item">
-                                            <div class="switch switchStatus">
-                                                <input id="cmn-toggle-baryn-'.$k.'" rel="'.$v["id"].'" title="'.$k.'" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" '.$status.'>
-                                                <label for="cmn-toggle-baryn-'.$k.'"></label>
-                                            </div>
-                                        </td>
-                                        <td class="status_edit"><i class="fa fa-pencil" aria-hidden="true" onclick="editCategory('.$v["id"].')"></i></td>
-                                        <td class="status_edit headcol">
-                                            <i class="fa fa-trash-o delete" style=" margin-top: -3px;color:#f00" onclick="fomDelete('.$v["id"].','.$k.')"></i>
-                                        </td>
-                                    </tr>';
-                $stt ++;
-            }
-            ?>
-            </tbody>
-        </table>
-        <div class="ountPagination">
-            <ul class="pagination">
-            </ul>
-        </div>
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>One to one crop box</h1>
+    <p>The image displays in its natural size, so the size of the crop box size equals real cropped size.</p>
+    <h3>Image</h3>
+    <div>
+        <img id="image" src="{{URL::to('/img')}}/picture.jpg" alt="Picture">
     </div>
-
-    <div id="fomDeleteUser" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button><br/>
-                </div>
-                <div class="modal-body">
-                    <p class="textDanger">Bạn có chắc chắn muốn xóa không?</p>
-                </div>
-                <div class="modal-footer" id="deleu" style="text-align: center;">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="deleteUser()">Có</button>
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Không</button>
-                </div>
-            </div>
-        </div>
+    <p>Data: <span id="data"></span></p>
+    <p>Crop Box Data: <span id="cropBoxData"></span></p>
+    <h3>Result</h3>
+    <p>
+        <button type="button" id="button">Crop</button>
+    </p>
+    <div id="result"></div>
+    <div id="result1" style="overflow: hidden; width: 144px;height: 144px;position: relative">
+       <div style="position: absolute">
+           <img src="{{URL::to('/img')}}/picture.jpg" style="width: 1280px;height: 720px;">
+       </div>
     </div>
+</div>
+<script src="{{ asset('console/js/cropper.js') }}"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        var image = document.querySelector('#image');
+        var data = document.querySelector('#data');
+        var cropBoxData = document.querySelector('#cropBoxData');
+        var button = document.getElementById('button');
+        var result = document.getElementById('result');
+        var cropper = new Cropper(image, {
+            ready: function (event) {
+                // Zoom the image to its natural size
+                cropper.zoomTo(1);
+            },
 
-    @include('console.category.from')
-    <script src="{{ asset('console/js/category.js') }}?v={{$time}}"></script>
-@endsection
+            crop: function (event) {
+                data.textContent = JSON.stringify(cropper.getData());
+                testqq = cropper.getCropBoxData();
+               //  console.log(data);
+               $("#result1").css({"width":testqq.width,"height":testqq.height});
+               //$("#result1 div").css({"left":-testqq.left,"top":-testqq.top});
+               //   $("#result1 img").css({"naturalWidth":1280,"naturalHeight":720,"aspectRatio":1.7777777777777777,"width":825,"height":464.0625,"left":0,"top":0});
+               //  //$("#result1 img").css({"left":317.5,"top":78.875,"width":328,"height":184.5});
+                cropBoxData.textContent = JSON.stringify(testqq)
+
+            },
+
+            zoom: function (event) {
+                // Keep the image in its natural size
+                if (event.detail.oldRatio === 1) {
+                    event.preventDefault();
+                }
+            },
+        });
+
+        button.onclick = function () {
+
+            result.innerHTML = '';
+            demotes = cropper.getCroppedCanvas();
+            result.appendChild(demotes);
+        };
+    });
+</script>
+</body>
+</html>

@@ -90,7 +90,7 @@ class CategoryController extends ConsoleController
             $textError[] = 'Tên danh mục';
         }
 
-        if (empty($parant) && empty($customIcon)) {
+        if (empty($parent) && empty($customIcon)) {
             $textError[] = 'Icon';
         }
 
