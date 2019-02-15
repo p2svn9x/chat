@@ -1,12 +1,9 @@
 
 @extends('console.layouts.master')
-@section('title', 'Category')
-@section('breadcrumb','Category')
+@section('title', 'Thuộc tính')
+@section('breadcrumb','Thuộc tính / Danh sách')
 @section('content')
     <div id="list_item" style="display: block;">
-        <button type="button" class="btn btn-primary" id="add_item" onclick="addItem();">
-            <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm mới
-        </button>
         <div class="alert alert-success" id="danger_alert"
              style="display: none;padding:7px;margin: 0px; width: 85%;float: right;">
             <strong></strong> <span id="alert_nam"></span>
@@ -24,33 +21,27 @@
             <tbody>
             <?php
             $stt = 1;
-            foreach ($list AS $k => $v) {
+            foreach ($attributes AS $key => $attribute) {
 
                 $status = 'checked';
-                if (empty($v['status'])) {
+                if (empty($attribute['status'])) {
                     $status = '';
                 }
-                $name = $v["name"];
-                if (!empty($v['parentName'])) {
-                    $name = $v['parentName'].' <i class="fa fa-long-arrow-right"></i> '.$v["name"];
-                }
+                $name = $attribute['categorys']["name"];
+
                 echo '
-                                    <tr id="colum'.$k.'">
+                                    <tr id="colum'.$key.'">
                                         <td class="name_item stt" width="10px">'.$stt.'</td>
                                         <td class="name_item">'. $name.'</td>
-
-                                        <td class="name_item viewMobile viewMobile1Logo" width="80">
-                                            <input type="text" class="form-control sort" onblur="updateSort(' . $v['id'] . ', this)" rel="' . $v['id'] . '" value="' . $v['sort'] . '" />
-                                        </td>
-                                       <td class="name_item">
+                                        <td class="name_item">
                                             <div class="switch switchStatus">
-                                                <input id="cmn-toggle-baryn-'.$k.'" rel="'.$v["id"].'" title="'.$k.'" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" '.$status.'>
-                                                <label for="cmn-toggle-baryn-'.$k.'"></label>
+                                                <input id="cmn-toggle-baryn-'.$key.'" rel="'.$attribute["id"].'" title="'.$key.'" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" '.$status.'>
+                                                <label for="cmn-toggle-baryn-'.$key.'"></label>
                                             </div>
                                         </td>
-                                        <td class="status_edit"><i class="fa fa-pencil" aria-hidden="true" onclick="editCategory('.$v["id"].')"></i></td>
+                                        <td class="status_edit"><a href="'.URL::route("console/attribute/edit").'/'.$attribute["id"].'"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                                         <td class="status_edit headcol">
-                                            <i class="fa fa-trash-o delete" style=" margin-top: -3px;color:#f00" onclick="fomDelete('.$v["id"].','.$k.')"></i>
+                                            <i class="fa fa-trash-o delete" style=" margin-top: -3px;color:#f00" onclick="fomDelete('.$attribute["id"].','.$key.')"></i>
                                         </td>
                                     </tr>';
                 $stt ++;
@@ -81,6 +72,4 @@
         </div>
     </div>
 
-    @include('console.category.from')
-    <script src="{{ asset('console/js/category.js') }}?v={{$time}}"></script>
 @endsection

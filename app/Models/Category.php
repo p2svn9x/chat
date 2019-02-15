@@ -10,4 +10,6 @@ class Category extends Model
 //    {
 //      //  return $this->hasMany(Article::class,'menu_id', 'id');
 //    }
+
+
 }

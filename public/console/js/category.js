@@ -95,6 +95,7 @@ function saveCategory() {
     nameCa = $("#name").val();
     customIcon = $("#customIcon").val();
     customLink = $("#customLink").val();
+
     $.ajax({
         url: serverName + 'console/category/save/' + id,
         type: "post",
