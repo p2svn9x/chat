@@ -1,0 +1,29 @@
+#result .attribule {
+    border: 1px solid #d8cece;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#result .attribule .titleAttribule {
+
+    width: 100%;
+
+}
+
+#result .attribule .titleAttribule span i {
+
+    float: right;
+
+    padding: 2px 6px 2px 6px;
+
+    border-radius: 2px;
+
+    color: #f00;
+
+    cursor: pointer;
+}
+
+#result .attribule .titleAttribule span i:hover {
+
+    color: #7a7c7f;
+}

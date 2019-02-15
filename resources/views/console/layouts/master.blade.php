@@ -42,7 +42,22 @@
     </div>
 </div>
 <div id="fromloading"></div>
-
+<div id="fomDeleteUser" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button><br/>
+            </div>
+            <div class="modal-body">
+                <p class="textDanger">Bạn có chắc chắn muốn xóa không?</p>
+            </div>
+            <div class="modal-footer" id="deleu" style="text-align: center;">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="deleteUser()">Có</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">Không</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="{{ asset('console/js/hoe.js') }}"></script>
 <script src="{{ asset('js/all.js') }}"></script>
 </body>

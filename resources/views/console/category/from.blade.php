@@ -7,9 +7,6 @@
             foreach ($categorys as $category ) {
 
                 echo '<option value="'.$category['id'].'" id="location'.$category['id'].'" class ="selectLocation"> '.$category['name'].'</option>';
-                foreach ($category['children'] AS $value) {
-                    echo '<option value="'.$value['id'].'" id="location'.$value['id'].'" class ="selectLocation"> &#151 '.$value['name'].'</option>';
-                }
             }
             ?>
         </select>

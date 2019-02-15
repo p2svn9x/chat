@@ -6,19 +6,21 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 use App\Models\Category;
+use phpDocumentor\Reflection\Types\Array_;
+
 class CategoryController extends ConsoleController
 {
-
+    public $listParent = [];
     public function index()
     {
         $data['categorys'] = $this->listParent(1);
         $data['list'] = $this->listCategory(1);
+
         return $this->viewConsole('category/list', $data);
     }
 
     public function listCategory($type)
     {
-        //$data = Category::where([['type', $type]])->orderBy('sort')->get(['id', 'name', 'status', 'parent', 'sort'])->toArray();
         $data = Category::orderBy('sort')->get(['id', 'name', 'status', 'parent', 'sort'])->toArray();
 
         if (empty($data)) {
@@ -57,19 +59,13 @@ class CategoryController extends ConsoleController
 
     public function listParent($type)
     {
-        $result = Category::where([['type', $type],['parent', 0]])->orderBy('sort')->get(['id', 'name', 'parent', 'sort'])->toArray();
+        $result = Category::where([['type', $type]])->orderBy('sort')->get(['id', 'name', 'parent', 'sort'])->toArray();
 
         if (empty($result)) {
             return array();
         }
 
-        $list = array();
-        foreach ($result AS $key => $value) {
-
-            $value['children'] = $this->children($value['id'], $type);
-            $list[] =  $value;
-        }
-        return $list;
+        return $this->sortCategory($result);
     }
 
     public function children($id, $type)
@@ -90,7 +86,7 @@ class CategoryController extends ConsoleController
             $textError[] = 'Tên danh mục';
         }
 
-        if (empty($parant) && empty($customIcon)) {
+        if (empty($parent) && empty($customIcon)) {
             $textError[] = 'Icon';
         }
 
@@ -183,6 +179,29 @@ class CategoryController extends ConsoleController
             $this->respondStatus('Lưu thành công');
         }
         $this->respondError('Đã xẩy ra lỗi vui lòng thử lại sau');
+    }
+
+    public function allCategory()
+    {
+        $result =  Category::where([['type', 1]])->get(['id', 'name', 'parent', 'sort']);
+        return $this->sortCategory($result);
+    }
+
+    public function sortCategory($data, $patent = 0, $text = '')
+    {
+        foreach ($data AS $key => $value) {
+            if ($value['parent'] != $patent) {
+                continue;
+            }
+
+            $this->listParent[] = array(
+                'name' => $text.$value['name'],
+                'id' => $value['id'],
+            );
+            unset($data[$key]);
+            $this->sortCategory($data, $value['id'], $text."&#151");
+        }
+        return $this->listParent;
     }
 
 }
