@@ -60,5 +60,6 @@
 </div>
 <script src="{{ asset('console/js/hoe.js') }}"></script>
 <script src="{{ asset('js/all.js') }}"></script>
+<script src="{{ asset('js/pagination.js') }}"></script>
 </body>
 </html>
