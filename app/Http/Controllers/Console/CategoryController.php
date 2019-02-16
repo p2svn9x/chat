@@ -45,6 +45,9 @@ class CategoryController extends ConsoleController
     public function nameParent($id, $name = '')
     {
         $category = Category::find($id);
+        if(empty($category)) {
+            return $name;
+        }
         $nameParent = $category->name;
         if (!empty($name)) {
             $nameParent = $category->name.' <i class="fa fa-long-arrow-right"></i> '.$name;

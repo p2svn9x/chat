@@ -4,6 +4,15 @@
 @section('breadcrumb','Thuộc tính / Danh sách')
 @section('content')
     <div id="list_item" style="display: block;">
+        <select class="form-control selectCategory" onchange="findByCategory()">
+            <?php
+            echo '<option value="0">Danh mục sản phẩm</option>';
+            foreach ($categorys as $category ) {
+
+                echo '<option value="'.$category['id'].'" id="location'.$category['id'].'" class ="selectLocation"> '.$category['name'].'</option>';
+            }
+            ?>
+        </select>
         <div class="alert alert-success" id="danger_alert"
              style="display: none;padding:7px;margin: 0px; width: 85%;float: right;">
             <strong></strong> <span id="alert_nam"></span>
@@ -27,7 +36,7 @@
                 if (empty($attribute['status'])) {
                     $status = '';
                 }
-                $name = $attribute['categorys']["name"];
+                $name = $attribute['categorys']["parent"];
 
                 echo '
                                     <tr id="colum'.$key.'">
@@ -54,22 +63,10 @@
             </ul>
         </div>
     </div>
+    <script>
+        var pageList = '<?php echo  json_encode($pagination)?>';
+        var findCategory = '<?php echo $findCategory?>';
+    </script>
 
-    <div id="fomDeleteUser" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button><br/>
-                </div>
-                <div class="modal-body">
-                    <p class="textDanger">Bạn có chắc chắn muốn xóa không?</p>
-                </div>
-                <div class="modal-footer" id="deleu" style="text-align: center;">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="deleteUser()">Có</button>
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Không</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <script src="{{ asset('console/js/attribute/list.js') }}?v={{$time}}"></script>
 @endsection

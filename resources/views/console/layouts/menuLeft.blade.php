@@ -60,7 +60,7 @@
 
         <li class="hoe-has-menu">
             <a href="javascript:void(0)">
-                <i class="fa fa-files-o"></i>
+                <i class="fa fa-tasks"></i>
                 <span class="menu-text">Thuộc tính</span>
                 <span class="selected"></span>
             </a>

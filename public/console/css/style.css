@@ -759,3 +759,8 @@ input.cmn-toggle-yes-no:checked + label:after {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
+.selectCategory {
+    max-width: 200px;
+    float: left;
+}
