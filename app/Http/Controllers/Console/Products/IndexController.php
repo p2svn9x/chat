@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Console\Products;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Http\Controllers\Console\ConsoleController;
-use App\Models\Category;
+use App\Http\Controllers\Console\CategoryController;
+use App\Exceptions\PaginationController;
+use App\Models\Attribute;
 class IndexController extends ConsoleController
 {
 
@@ -14,9 +16,13 @@ class IndexController extends ConsoleController
         return $this->viewConsole('products/list');
     }
 
-    public function add($id = null)
+    public function add()
     {
-        return $this->viewConsole('products/add');
+        $cas = new CategoryController();
+        $data['categorys'] = $cas->allCategory();
+        $data['title'] = 'Thêm sản phẩm';
+        $data['breadcrumb'] = 'Sảm phẩm / Thêm mới';
+        return $this->viewConsole('products/add', $data);
     }
 
 }

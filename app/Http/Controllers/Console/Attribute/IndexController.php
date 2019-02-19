@@ -72,9 +72,34 @@ class IndexController extends ConsoleController
         if ($attribute->save()) {
             $this->respondStatus('Lưu thành công');
         }
-
         $this->respondError('Đã xẩy ra lỗi vui lòng thử lại sau');
     }
+
+    public function addRow($category, $title, $type)
+    {
+        $attribute = new Attribute();
+        $attribute->user_id = $this->user->id;
+        $attribute->category_id = $category;
+        $attribute->type = $type;
+        $attribute->title = $title;
+        $attribute->save();
+        return true;
+    }
+
+    public function updateRow($id, $category, $title, $type)
+    {
+        $attribute = Attribute::find($id);
+        if (empty($attribute)) {
+            $this->respondError("Thuộc tính không tồn tại");
+        }
+        $attribute->type = $type;
+        $attribute->category_id = $category;
+        $attribute->title = $title;
+        $attribute->save();
+        return true;
+    }
+
+
 
     public function show($id = null)
     {
