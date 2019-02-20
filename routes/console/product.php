@@ -1,7 +1,7 @@
 <?php
 Route::group(['prefix' => 'products'], function () {
 
-    Route::get('/list/{id?}/{page?}/{limit?}', '\App\Http\Controllers\Console\Attribute\IndexController@index')
+    Route::get('/list/{id?}/{page?}/{limit?}', '\App\Http\Controllers\Console\Products\IndexController@index')
         ->name('console/products/list')
         ->where(['id', '[0-9]+'], ['page', '[0-9]+'], ['limit', '[0-9]+']);
 

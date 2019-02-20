@@ -48,22 +48,36 @@ function removeAttributes(idTime) {
 function save() {
     id = $("#idAttribute").val();
     ca = $("#category").val();
+    typeAttribute = $(".attribule .input_add_item").val();
+    textlabel = $(".attribule .resultAttribute .textlabel").val();
+
     if (!ca) {
         errorMessage("Danh mục sản phẩm không được bỏ trống");
         return false;
     }
 
-    rsult = getAttribute();
-    if (typeof rsult === 'string') {
-        errorMessage(rsult);
+    if (!typeAttribute) {
+        errorMessage("Khiểu thuộc tính không được bỏ trống");
         return false;
     }
 
-    if (rsult.length < 1) {
-        errorMessage("Bạn chưa có thuộc tính nào");
+    if (!textlabel) {
+        errorMessage("Tên thuộc tính không được bỏ trống");
         return false;
     }
-    attribute = JSON.stringify(rsult);
+
+    //rsult = getAttribute();
+
+    // if (typeof rsult === 'string') {
+    //     errorMessage(rsult);
+    //     return false;
+    // }
+    //
+    // if (rsult.length < 1) {
+    //     errorMessage("Bạn chưa có thuộc tính nào");
+    //     return false;
+    // }
+    // attribute = JSON.stringify(rsult);
 
     hideError();
     showFomoad();
@@ -73,7 +87,8 @@ function save() {
         dateType: "json",
         data: {
             category: ca,
-            attribute: attribute
+            textlabel: textlabel,
+            typeAttribute: typeAttribute,
         },
         success: function (result) {
             $("#fromloading").fadeOut(1);

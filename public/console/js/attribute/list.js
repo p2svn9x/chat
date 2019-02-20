@@ -72,3 +72,24 @@ function findByCategory() {
 
     location.href = serverName + 'console/attribute/list/'+ca;
 }
+
+
+function updateSort(id, e) {
+
+    sort = e.value;
+    $.ajax({
+        url: serverName + 'console/attribute/sort/' + id + '/' + sort,
+        type: "get",
+        dateType: "json",
+        data: {},
+        success: function (result) {
+
+            obj = parseJson(result);
+            dangerSuccess(obj.message);
+        }, error(result) {
+            obj = parseJson(result.responseText);
+            dangerEroor(obj.message);
+            return false;
+        }
+    });
+}

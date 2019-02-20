@@ -8,6 +8,7 @@ use App\Http\Controllers\Console\ConsoleController;
 use App\Http\Controllers\Console\CategoryController;
 use App\Exceptions\PaginationController;
 use App\Models\Attribute;
+use App\Models\Category;
 class IndexController extends ConsoleController
 {
 
@@ -24,5 +25,6 @@ class IndexController extends ConsoleController
         $data['breadcrumb'] = 'Sảm phẩm / Thêm mới';
         return $this->viewConsole('products/add', $data);
     }
+
 
 }

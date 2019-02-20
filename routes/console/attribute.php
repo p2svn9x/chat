@@ -11,4 +11,5 @@ Route::group(['prefix' => 'attribute'], function () {
         ->name('console/attribute/status')
         ->where(['id', '[0-9]+'], ['status', '[0-1]+']);
     Route::post('/save/{id?}', '\App\Http\Controllers\Console\Attribute\IndexController@save')->name('console/attribute/save')->where('id', '[0-9]+');
+    Route::get('/sort/{id?}/{sort?}', '\App\Http\Controllers\Console\Attribute\IndexController@sort')->where(['id', '[0-9]+'], ['sort', '[0-9]+']);
 });
