@@ -42,6 +42,9 @@
                                     <tr id="colum'.$key.'">
                                         <td class="name_item stt" width="10px">'.$stt.'</td>
                                         <td class="name_item">'. $name.'</td>
+                                        <td class="name_item viewMobile viewMobile1Logo" width="80">
+                                            <input type="text" class="form-control sort" onblur="updateSort(' . $attribute['id'] . ', this)" rel="' . $attribute['id'] . '" value="' . $attribute['sort'] . '" />
+                                        </td>
                                         <td class="name_item">
                                             <div class="switch switchStatus">
                                                 <input id="cmn-toggle-baryn-'.$key.'" rel="'.$attribute["id"].'" title="'.$key.'" class="cmn-toggle cmn-toggle-round-flat" type="checkbox" '.$status.'>

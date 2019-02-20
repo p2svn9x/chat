@@ -19,8 +19,8 @@
         <div id="result">
         </div>
 
-        <div class="form-group" style="height: 35px;">
-            <button type="button" class="btn btn-primary" id="add_item" onclick="addAttribute()">
+        <div class="form-group" style="height: 35px; display: none">
+            <button type="button" class="btn btn-primary" id="add_item" onclick="addAttribute('')">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm mới
             </button>
 

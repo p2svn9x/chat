@@ -27,15 +27,11 @@ function getDataAttribute() {
 }
 
 function showDataAttribute(data) {
-   // optionAttri = parseJson(data.data);
-    $("#category").val(data.category_id);
-    optionAttri = parseJson(data.data);
 
-    for (i = 0; i < optionAttri.length; i++) {
-        idTime = addAttribute();
-        addOption(idTime, '');
-        id = "attribule"+idTime;
-        $("#"+id+" .input_add_item").val(optionAttri[i]['typeAttribute']);
-        $("#"+id+" .resultAttribute .textlabel").val(optionAttri[i]['textlabel']);
-    }
+    $("#category").val(data.category_id);
+    idTime = addAttribute();
+    addOption(idTime, '');
+    id = "attribule"+idTime;
+    $("#"+id+" .input_add_item").val(data.type);
+    $("#"+id+" .resultAttribute .textlabel").val(data.title);
 }

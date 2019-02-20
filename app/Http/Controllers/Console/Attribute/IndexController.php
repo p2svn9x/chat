@@ -15,7 +15,6 @@ class IndexController extends ConsoleController
     {
         $cas = new CategoryController();
         $paginations = new PaginationController();
-
         $pagination = $paginations->pagination($limit, $page);
         $data['categorys'] = $cas->allCategory();
         $pagination['count'] = $paginations->totalPage($this->countAttributes($id), $pagination['limit']);
@@ -41,15 +40,20 @@ class IndexController extends ConsoleController
     public function save($id = null)
     {
         $category = $this->post('category');
-        $data = $this->post('attribute');
-        $textError = array();
+        $typeAttribute = $this->post('typeAttribute');
+        $textlabel = $this->post('textlabel');
 
+        $textError = array();
         if(empty($category)) {
             $textError[] = 'Danh mục';
         }
 
-        if(empty($data)) {
-            $textError[] = 'Thuộc tính';
+        if(empty($typeAttribute)) {
+            $textError[] = '"Khiểu thuộc tính';
+        }
+
+        if(empty($textlabel)) {
+            $textError[] = 'Tên thuộc tính';
         }
 
         if (!empty($textError)) {
@@ -68,11 +72,11 @@ class IndexController extends ConsoleController
 
         $attribute->user_id = $this->user->id;
         $attribute->category_id = $category;
-        $attribute->data = $data;
+        $attribute->title = $textlabel;
+        $attribute->type = $typeAttribute;
         if ($attribute->save()) {
             $this->respondStatus('Lưu thành công');
         }
-
         $this->respondError('Đã xẩy ra lỗi vui lòng thử lại sau');
     }
 
@@ -96,9 +100,11 @@ class IndexController extends ConsoleController
             $query->where('category_id', '=', $id);
         }
         $results = $query->with('categorys:id,name')
+            ->orderBy('category_id')
+            ->orderBy('sort')
             ->limit($limit)
             ->offset($page)
-            ->get(['id','category_id','status'])
+            ->get(['id','category_id','status','sort'])
             ->toArray();
         if (empty($results)) {
             return array();
@@ -156,6 +162,25 @@ class IndexController extends ConsoleController
         }
         if ($attribute->delete()) {
             $this->respondStatus('Xóa thành công');
+        }
+        $this->respondError('Đã xẩy ra lỗi vui lòng thử lại sau');
+    }
+
+    public function sort($id = null, $sort = null)
+    {
+        if (empty($id)) {
+            $this->respondError("Danh mục không tồn tại");
+        }
+        if (empty($sort)) {
+            $sort = 1;
+        }
+        $user = Attribute::find($id);
+        if (empty($user)) {
+            $this->respondError("Danh mục không tồn tại");
+        }
+        $user->sort = $sort;
+        if ($user->save()) {
+            $this->respondStatus('Lưu thành công');
         }
         $this->respondError('Đã xẩy ra lỗi vui lòng thử lại sau');
     }

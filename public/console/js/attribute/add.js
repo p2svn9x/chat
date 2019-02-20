@@ -1,7 +1,9 @@
 var selectOptions = [{'1':"Input"},{'2':"Textarea"},{'3':"Word"}];
-function addAttribute() {
-    idTime = new Date().getTime();
-    item = '<div class="attribule" id="attribule'+idTime+'">' +
+function addAttribute(idTime = '') {
+    if (!idTime) {
+        idTime = new Date().getTime();
+    }
+    item = '<div class="attribule" id="attribule'+idTime+'" rel ="'+idTime+'">' +
         '   <div class="form-group">' +
         '       <label for="subDomain" id="titleAddMenu" class="titleAttribule">Kiểu thuộc tính * ' +
         '           <span><i onclick="removeAttributes('+idTime+')" class="fa fa-times"></i></span>' +
@@ -24,6 +26,10 @@ function chomeOption(idTime, sel) {
 }
 
 function addOption(idTime, sel) {
+    if ($("#attribule"+idTime+" .resultAttribute .textlabel").length != 0){
+        console.log("va");
+        return false;
+    }
     item = '<div class="form-group">' +
         '   <label for="subDomain" id="titleAddMenu">Tên Thuộc tính *</label>' +
         '   <input type="text" class="form-control textlabel">' +
@@ -42,22 +48,36 @@ function removeAttributes(idTime) {
 function save() {
     id = $("#idAttribute").val();
     ca = $("#category").val();
+    typeAttribute = $(".attribule .input_add_item").val();
+    textlabel = $(".attribule .resultAttribute .textlabel").val();
+
     if (!ca) {
         errorMessage("Danh mục sản phẩm không được bỏ trống");
         return false;
     }
 
-    rsult = getAttribute();
-    if (typeof rsult === 'string') {
-        errorMessage(rsult);
+    if (!typeAttribute) {
+        errorMessage("Khiểu thuộc tính không được bỏ trống");
         return false;
     }
 
-    if (rsult.length < 1) {
-        errorMessage("Bạn chưa có thuộc tính nào");
+    if (!textlabel) {
+        errorMessage("Tên thuộc tính không được bỏ trống");
         return false;
     }
-    attribute = JSON.stringify(rsult);
+
+    //rsult = getAttribute();
+
+    // if (typeof rsult === 'string') {
+    //     errorMessage(rsult);
+    //     return false;
+    // }
+    //
+    // if (rsult.length < 1) {
+    //     errorMessage("Bạn chưa có thuộc tính nào");
+    //     return false;
+    // }
+    // attribute = JSON.stringify(rsult);
 
     hideError();
     showFomoad();
@@ -67,14 +87,15 @@ function save() {
         dateType: "json",
         data: {
             category: ca,
-            attribute: attribute
+            textlabel: textlabel,
+            typeAttribute: typeAttribute,
         },
         success: function (result) {
             $("#fromloading").fadeOut(1);
             obj = parseJson(result);
             successMessage(obj.message);
             setTimeout(function () {
-                location.href = serverName+'console/attribute/list';
+                //location.href = serverName+'console/attribute/list';
             }, 1000);
         }, error(result) {
 
@@ -106,10 +127,12 @@ function getAttribute() {
             textError = 'Tên thuộc tính không được bỏ trống';
             return false;
         }
+        alias = $(this).attr('rel');
 
         innerObj = {
             typeAttribute: typeAttribute,
-            textlabel: textlabel
+            textlabel: textlabel,
+            alias: alias
         };
         attribute.push(innerObj);
     });

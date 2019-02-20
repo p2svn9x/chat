@@ -44,7 +44,7 @@
             </a>
             <ul class="hoe-sub-menu">
                 <li>
-                    <a href="{{URL::route('console/products/test')}}">
+                    <a href="{{URL::route('console/products/list')}}">
                         <span class="menu-text">Danh sách sản phẩm</span>
                         <span class="selected"></span>
                     </a>

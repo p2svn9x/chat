@@ -6,7 +6,8 @@ CREATE TABLE `attributes` (
   `category_id` INT (11),
   `type` INT (11),
   `data` TEXT,
-   `status` int(1) DEFAULT '1',
+  `sort` INT(11) DEFAULT '1',
+  `status` int(1) DEFAULT '1',
   `created_at` DATETIME,
   `updated_at` DATETIME,
   PRIMARY KEY (`id`)

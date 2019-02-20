@@ -207,4 +207,9 @@ class CategoryController extends ConsoleController
         return $this->listParent;
     }
 
+    public function categoryByParents($parent)
+    {
+        $result =  Category::where([['type', 1]])->get(['id', 'name', 'parent', 'sort']);
+    }
+
 }
