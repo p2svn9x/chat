@@ -14,6 +14,17 @@ class IndexController extends ConsoleController
 
     public function index()
     {
+            $files = glob(public_path() . '/img/*.*');
+//        $files = \File::allFiles(public_path('/img/'));
+//        foreach ($files as $path => $value) {
+//            echo $value->getPath() . "<br/>";
+//        }
+//        exit;
+        foreach($files as $path) {
+            echo $path."<br/>";
+        }
+
+        exit;
         return $this->viewConsole('products/list');
     }
 
