@@ -6,5 +6,6 @@ Route::group(['prefix' => 'console'], function () {
     include 'console/product.php';
     include 'console/attribute.php';
     include 'console/folder.php';
+    include 'console/newuser.php';
 
 });
