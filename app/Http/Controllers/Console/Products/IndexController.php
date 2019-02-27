@@ -14,18 +14,22 @@ class IndexController extends ConsoleController
 
     public function index()
     {
-            $files = glob(public_path() . '/img/*.*');
-//        $files = \File::allFiles(public_path('/img/'));
-//        foreach ($files as $path => $value) {
-//            echo $value->getPath() . "<br/>";
-//        }
-//        exit;
-        foreach($files as $path) {
-            echo $path."<br/>";
-        }
 
-        exit;
-        return $this->viewConsole('products/list');
+        $dir = public_path()."/images/";
+
+        $a = scandir($dir);
+
+       // $b = scandir($dir,1);
+
+        $this->printData($a);
+
+
+//        $files = glob(public_path() . '/images/giay/*.*');
+//
+//        foreach($files as $path) {
+//            echo $path."<br/>";
+//        }
+//        return $this->viewConsole('products/list');
     }
 
     public function add()
@@ -36,6 +40,4 @@ class IndexController extends ConsoleController
         $data['breadcrumb'] = 'Sảm phẩm / Thêm mới';
         return $this->viewConsole('products/add', $data);
     }
-
-
 }

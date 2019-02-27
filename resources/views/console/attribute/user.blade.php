@@ -39,7 +39,7 @@
                 obj = parseJson(result);
                 setTimeout(function () {
                     callApi();
-                }, 600000);
+                }, 120000);
             }, error(result) {
                 obj = parseJson(result.responseText);
                 alert(obj.message);
