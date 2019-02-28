@@ -1,0 +1,239 @@
+#mediaCencer .row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#mediaCencer .modal-dialog{
+    width: 1000px;
+    height: 600px;
+    border-radius: 0px;
+}
+
+#mediaCencer .modal-content {
+
+    border-radius: 0px;
+}
+
+#mediaCencer .media-heading {
+    /* background: #f00; */
+    border-bottom: 1px solid #959191ee;
+    padding: 5px;
+    clear: both;
+}
+
+#mediaCencer .media-heading .button-option {
+
+    float: right;
+
+    text-align: right;
+}
+
+#mediaCencer .media-heading p {
+    /* background:#f00; */
+    line-height: 33px;
+    margin: 0px;
+    font-size: 24px;
+    color: #000;
+}
+
+#mediaCencer .media-heading .button-option button {
+    /* float:right; */
+    margin-left: 10px;
+    background:none;
+    border:1px solid #959191ee;
+    color: #000;
+}
+#mediaCencer .content-medias .col-sm-2 {
+    /* border: 1px solid #f00; */
+    margin-bottom: 11px;
+    cursor: pointer;
+}
+
+#mediaCencer .content-medias .col-sm-2 .media-folder{
+
+    text-align: center;
+}
+
+#mediaCencer .content-medias .col-sm-2 .media-folder i{
+    font-size: 114px;
+    color: #ffca28;
+    margin: 0px;
+}
+#mediaCencer .content-medias .col-sm-2 .media-folder label {
+
+    font-weight: normal;
+
+    max-width: 100%;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    clear: both;
+
+    display: block;
+
+    text-align: center;
+
+    margin: auto;
+}
+#mediaCencer .content-medias img {
+    max-width:100%;
+    max-height:100%;
+}
+
+#mediaCencer .media-bottom {
+    border-top: 1px solid #959191ee;
+    padding: 5px;
+    clear: both;
+    text-align:right
+}
+#mediaCencer .content-medias {
+    max-height: 500px;
+    overflow:hidden;
+    overflow-y: scroll;
+
+}
+.content-medias::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+.content-medias::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+#addFolder .modal-content {
+    margin-top: 40%;
+    width: 400px;
+    border-radius:0px;
+    padding: 10px;
+    /* text-align: center; */
+}
+#addFolder .modal-content p {
+    font-size: 16px;
+    margin: 0;
+    /* padding: 20px 20px 0; */
+    border-bottom: 1px solid transparent;
+    padding-right: 46px;
+    background: transparent;
+    color: #333;
+    margin: 0px 0px 10px 0px;
+    text-align: left;
+}
+
+#addFolder .modal-content input{
+    height: 38px;
+    line-height: 38px \0;
+    margin: 0;
+    padding: 0 8px;
+    font-size: 14px;
+    clear:both;
+    display:block;
+    margin:auto;
+    width: 100%;
+    margin-bottom: 11px;
+}
+
+#uploadImages .modal-dialog {
+
+    margin-top:5%;
+    width:980px;
+
+
+}
+#uploadImages .modal-content {
+    border-radius:0px;
+    /* padding:10px; */
+    height:500px;
+}
+
+#uploadImages .upload-header {
+    border-bottom:1px solid #3b3838ee;
+    padding:5px;
+    /* margin-bottom: 10px; */
+    height: 50px;
+}
+
+#uploadImages .upload-header p {
+    color: #000;
+    font-size:24px;
+    line-height: 40px;
+    margin: 0px;
+    float: left;
+    margin-left: 5px;
+}
+#uploadImages .upload-header span {
+
+    display: block;
+
+    float: right;
+
+    font-size: 40px;
+
+    font-weight: normal;
+
+    line-height: 38px;
+
+    margin-right: 5px;
+}
+#uploadImages .content-upload {
+    height: 398px;
+    /* background: #cdcaca; */
+    margin: 0px;
+    /* height: 100%; */
+}
+#uploadImages .row .notice {
+    border-right: 1px solid #504d4d;
+    height: 100%;
+    padding-top: 109px;
+}
+#uploadImages .row .notice p {
+    color:#000;
+    font-size : 14px
+
+}
+
+#uploadImages .col-sm-8{
+    background:#dad4d4;
+    height:100%;
+    padding:0px;
+}
+
+#uploadImages .col-sm-8 #fileUploadMedia {
+    display:none;
+}
+
+#uploadImages .col-sm-8 #text-select-file {
+
+    text-align:center;
+
+    display:block;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    /* background:#f00; */
+
+    height:100%;
+
+    line-height: 397px;
+
+    display: none;
+}
+
+#uploadImages .upload-bottom {
+    text-align:right;
+    padding: 8px 10px 0px 0px;
+    border-top:1px solid #545050;
+}
+#uploadImages #progress-group {
+
+    width:99%;
+    margin:auto;
+    margin-top:10px;
+}

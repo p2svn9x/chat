@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Console\Medias;
 
 use App\Http\Controllers\Console\ConsoleController;
-use App\Http\Controllers\Console\Medias\FoldersController;
+use Illuminate\Http\Request;
 class ImagesController extends ConsoleController
 {
 
@@ -29,5 +29,22 @@ class ImagesController extends ConsoleController
             }
         }
        return $list;
+    }
+
+    public function doUpload(Request $request, $folder = 0)
+    {
+        $folders = new FoldersController();
+        $nameFolder = $folders->findFolder($folder);
+
+        $file = $request->filesTest;
+        try {
+            $file->move(public_path($nameFolder."/dsadsa"),$file->getClientOriginalName());
+            $this->respondStatus($nameFolder."/".$file->getClientOriginalName());
+        }
+        catch (\Exception $e) {
+           $this->respondError("Có lỗi xảy ra");
+        }
+
+
     }
 }

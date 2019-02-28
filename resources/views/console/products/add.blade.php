@@ -56,14 +56,7 @@
                         <img class="iconImagesByColor" onclick="chooseImgByColor(12345)" src="{{ asset('img/imgdefault.png') }}">
                         <div class="listImg">
                             <img class="imgColer" src="{{ asset('img/img_test.jpg') }}">
-                            <img class="imgColer" src="{{ asset('img/img_test.jpg') }}">
-                            <img class="imgColer" src="{{ asset('img/img_test.jpg') }}">
-                            <img class="imgColer" src="{{ asset('img/img_test.jpg') }}">
-                            <img class="imgColer" src="{{ asset('img/img_test.jpg') }}">
-                            <img class="imgColer" src="{{ asset('img/img_test.jpg') }}">
-                            <img class="imgColer" src="{{ asset('img/img_test.jpg') }}">
-                            <img class="imgColer" src="{{ asset('img/img_test.jpg') }}">
-                            <img class="imgColer" src="{{ asset('img/img_test.jpg') }}">
+
                         </div>
                     </div>
                 </div>
@@ -80,50 +73,19 @@
         </div>
         <br/>
         <br/>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-backdrop="static" data-target="#myModal">Open Modal</button>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-backdrop="static" data-target="#myModal1">Open Modal</button>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-backdrop="static" data-target="#mediaCencer">mediaCencer</button>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-backdrop="static" data-target="#addFolder">addFolder</button>
         <input type="hidden" class="form-control input_add_item" id="idAttribute" value=""/>
         <button type="button" class="btn btn-primary" id="add_item" onclick="save()">Lưu lại</button>
         <button type="submit" class="btn btn-default" onclick="cancelAdd()">Hủy</button>
     </div>
-
+    @include('console.medias.index')
     <script src="{{ asset('console/js/productions/color.js') }}"></script>
     <script>
         $('[data-toggle="tooltip"]').tooltip();
         CKEDITOR.replace('content')
         //CKEDITOR.instances['content'].destroy(true);
     </script>
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-
-                <div class="media-cencer">
-                    <h3>Media Center</h3>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="modal fade" id="myModal1" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Some text dwqdwqdwqdwq dwqdin the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
 @endsection
 
