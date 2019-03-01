@@ -24,6 +24,10 @@ class FoldersController extends ConsoleController
         if (empty($parent)) {
             $parent = 0;
         }
+
+        if (!empty($parent)) {
+            $this->checkParent($parent);
+        }
         $demo = $this->getNameParent($parent,'');
         $nameFolder = strtolower(preg_replace('/\s+/', '', $this->utf8tourl($name)));
         $folder = new Folders();
@@ -37,12 +41,31 @@ class FoldersController extends ConsoleController
         }
 
         if ($folder->save()) {
-            $this->respondStatus('Lưu thành công');
+            $this->responData(array($folder));
         }
         $this->respondError('Đã xẩy ra lỗi vui lòng thử lại sau');
     }
 
+    public function checkParent($id)
+    {
+        $result = Folders::find($id);
+        if (empty($result)) {
+            $this->respondError("Thư mục cha không tồn tại.");
+        }
+        return true;
+    }
+
     public function findFolder($id)
+    {
+        $result = Folders::where('id', $id)->get(['id', 'name', 'parent'])->first();
+        if(empty($result)) {
+          return '';
+        }
+        $result->demo = "dsadas";
+        return $result;
+    }
+
+    public function findChildentFolder($id)
     {
         $perent = "/images";
         if(empty($id)) {

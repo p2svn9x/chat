@@ -34,6 +34,8 @@
     margin: 0px;
     font-size: 24px;
     color: #000;
+    float: left;
+    margin-right: 20px;
 }
 
 #mediaCencer .media-heading .button-option button {
@@ -223,7 +225,7 @@
 
     line-height: 397px;
 
-    display: none;
+    /* display: none; */
 }
 
 #uploadImages .upload-bottom {
@@ -236,4 +238,14 @@
     width:99%;
     margin:auto;
     margin-top:10px;
+}
+
+#addFolder .iconLoading {
+    display: none;
+    margin-left: 10px;
+}
+
+.media-heading .breadcrumb {
+    margin-bottom: 0px;
+    background: #fff;
 }

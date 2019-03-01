@@ -19,7 +19,7 @@ class IndexController extends ConsoleController
                 'payload' => 'GET_STARTED_PAYLOAD'
             )
         );
-        $access_token = 'EAAStrJgfgZAkBAMoZC8qCPHeeViasQuP4MW4XjSprcKDoiFcaiE2pnqQ07jzxSP0xYRP7mHBse10bO0LTZATIKUnjA7fyrFvCnSdeFZCLfWjhcygFkZAd5onbjMJyDOtiPOAZAJAqp7OsWc95XaZBua6WU7nHv2vXSH7lJ447wh9MMcQ8dxdJpD';
+        $access_token = 'EAAZAFiid2nrEBAES4ZAlRV8AEquAMX442THieZBMaZBYo4NgZBdaPcIz0hxfPDn7DwLZCnbH4ZCveZBmdQ82ZBrdsItDVZADLt6zZCSaJEsIHpjdkFTq8HhDEf4L8J3OAFJfAXF8Gy2bzngEE0mk2rcGsFZArDoRQesZBo68HNoYOxcnKhknO9oOe0vl5';
         $url_setting = 'https://graph.facebook.com/v2.8/me/messenger_profile?access_token='.$access_token;
         $ch_setting = curl_init($url_setting);
         //Tell cURL that we want to send a POST request.

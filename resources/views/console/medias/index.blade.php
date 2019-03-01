@@ -5,13 +5,20 @@
         <div class="modal-content">
             <div class="media-cencer">
                 <div class="row media-heading" style=" margin-right: 0px;margin-left: 0px;">
-                    <div class="col-sm-6" style=""><p>Media Center</p></div>
+                    <div class="col-sm-6" style=""><p>Media Center</p>
+                        <ul class="breadcrumb" style="background: #fff">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Pictures</a></li>
+                            <li><a href="#">Summer 15</a></li>
+                            <li>Italy</li>
+                        </ul>
+                    </div>
                     <div class="col-sm-6 button-option">
                         <button type="button" class="btn" data-toggle="modal" data-backdrop="static"
                                 data-target="#addFolder">Tạo thư mục mới
                         </button>
                         <button type="button" class="btn" data-toggle="modal" data-backdrop="static"
-                                data-target="#uploadImages">Up ảnh
+                                data-target="#uploadImages" onclick="showFormUpload()">Up ảnh
                         </button>
                     </div>
                 </div>
@@ -218,13 +225,16 @@
 
     </div>
 </div>
+<input type="text" value="0" id="parentFolder">
 <div class="modal fade" id="addFolder" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content" style="">
             <p>Tạo thư mục</p>
             <input value="" type="text" id="nameFolder" placeholder="Tên thưc mục">
-            <button type="button" class="btn btn-dark cancel">Hủy</button>
-            <button type="button" class="btn btn-warning apply">Lưu</button>
+            <p class="error"></p>
+            <button type="button" class="btn btn-dark cancel" onclick="closeFolder()">Hủy</button>
+            <button type="button" class="btn btn-warning apply" onclick="addFolder()">Lưu</button>
+            <span class="iconLoading"><i class="fa fa-spinner fa-spin" style="font-size:24px"></i></span>
         </div>
     </div>
 </div>
@@ -234,13 +244,13 @@
         <div class="modal-content row" style="">
             <div class="upload-header">
                 <p>Upload Image</p>
-                <span class="close">&times;</span>
+                <span class="close" onclick="cancelUploadImages()">&times;</span>
             </div>
             <div class="row content-upload">
                 <div class="col-sm-4 notice">
                     <p>Hướng dẫn:</p>
                     <p> Độ lớn tối đa - 3MB.</p>
-                    <p>Kích thước - 1x1 ~ 5000x5000.</p>
+                    <p>Kích thước - 1x1 ~ 460px x 460px.</p>
                     <p>Định dạng - .JPG, .JPEG, .PNG</p>
 
                 </div>
@@ -255,13 +265,12 @@
                             </div>
                         </div>
                     </div>
-                    <label id="text-select-file">Chọn ảnh từ thiết bị của bạn</label>
-                    <input type="file" id="fileUploadMedia" multiple="multiple">
+                    <label id="text-select-file" onclick="triggerFile()">Chọn ảnh từ thiết bị của bạn</label>
+                    <input type="file" id="fileUploadMedia" multiple="multiple" onchange="doUploadImages()">
                 </div>
                 <div class="col-sm-12 upload-bottom">
                     <div>
-                        <button type="button" class="btn btn-dark cancel">Hủy</button>
-                        <button type="button" class="btn btn-warning apply">Chọn</button>
+                        <button type="button" class="btn btn-dark cancel" onclick="cancelUploadImages()">Close</button>
                     </div>
                 </div>
             </div>
@@ -269,3 +278,5 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('console/js/media/uploadimages.js') }}?v={{$time}}"></script>
+<script src="{{ asset('console/js/media/folder.js') }}?v={{$time}}"></script>
