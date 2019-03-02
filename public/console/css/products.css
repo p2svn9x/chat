@@ -1,0 +1,10 @@
+button.buttonColor {
+    width: 100px;
+    height: 33px;
+    border: 1px solid #73666685;
+    border-radius: 4px;
+}
+button.buttonColor:focus {outline:0;}
+button.buttonColor:active {
+    outline: 0;
+}
