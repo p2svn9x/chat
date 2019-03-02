@@ -6,7 +6,7 @@ use App\Http\Controllers\Console\ConsoleController;
 use App\Models\Console\Folders;
 class FoldersController extends ConsoleController
 {
-
+    public $pagentFolders = array();
     public function show($prent = 0)
     {
         $result = Folders::where('parent', $prent)->orderBy('name')->get(['id', 'name_folder']);
@@ -28,7 +28,7 @@ class FoldersController extends ConsoleController
         if (!empty($parent)) {
             $this->checkParent($parent);
         }
-        $demo = $this->getNameParent($parent,'');
+        $demo = $this->getFolderParent($parent,'');
         $nameFolder = strtolower(preg_replace('/\s+/', '', $this->utf8tourl($name)));
         $folder = new Folders();
         $folder->user_id = $this->user->id;
@@ -57,11 +57,17 @@ class FoldersController extends ConsoleController
 
     public function findFolder($id)
     {
-        $result = Folders::where('id', $id)->get(['id', 'name', 'parent'])->first();
+        $result = $this->getFolder($id);
         if(empty($result)) {
-          return '';
+          return array();
         }
-        $result->demo = "dsadas";
+
+        if (!empty($result->parent)) {
+
+            $result->parentFolder = $this->parentFolder($result->parent);
+        } else {
+            $result->parentFolder = array();
+        }
         return $result;
     }
 
@@ -71,6 +77,7 @@ class FoldersController extends ConsoleController
         if(empty($id)) {
             return $perent;
         }
+
         $result = Folders::where('id', $id)->get(['id', 'name', 'parent'])->first();
 
         if (empty($result)) {
@@ -81,7 +88,7 @@ class FoldersController extends ConsoleController
             $perent = "/images/";
         }
 
-        $data = $perent.$this->getNameParent($result->parent, '')."/".$result->name;
+        $data = $perent.$this->getFolderParent($result->parent, '')."/".$result->name;
         return $data;
     }
 
@@ -95,7 +102,7 @@ class FoldersController extends ConsoleController
         return false;
     }
 
-    public function getNameParent($id, $name = '')
+    public function getFolderParent($id, $name = '')
     {
         if(empty($id)) {
             return $name;
@@ -115,6 +122,51 @@ class FoldersController extends ConsoleController
         if (empty($folder->parent)) {
             return $nameParent;
         }
-        return $this->nameParent($folder->parent, $nameParent);
+        return $this->getFolderParent($folder->parent, $nameParent);
+    }
+
+    public function getNameParent($id, $name = '')
+    {
+        if(empty($id)) {
+            return $name;
+        }
+
+        $folder = Folders::find($id);
+        if(empty($folder)) {
+            return $name;
+        }
+
+        $nameParent = $folder->name_folder;
+
+        if (!empty($name)) {
+            $nameParent = $folder->name_folder.'/'.$name;
+        }
+
+        if (empty($folder->parent)) {
+            return $nameParent;
+        }
+        return $this->getNameParent($folder->parent, $nameParent);
+    }
+
+    public function getFolder($id)
+    {
+        return Folders::where('id', $id)->get(['id', 'name', 'parent', 'name_folder'])->first();
+    }
+
+    public function parentFolder($id)
+    {
+        $result = $this->getFolder($id);
+
+        if (empty($result)) {
+            return $this->pagentFolders;
+        }
+
+        $this->pagentFolders[] = $result;
+
+        if (empty($result->parent)) {
+
+            return $this->pagentFolders;
+        }
+        return $this->parentFolder($result->parent);
     }
 }

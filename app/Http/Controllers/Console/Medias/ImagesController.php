@@ -13,7 +13,7 @@ class ImagesController extends ConsoleController
         $nameFolder = $folders->findChildentFolder($id);
         $folder = $folders->findFolder($id);
 
-        $data['folders'] = $folders->show($id);
+        $data['childentFolders'] = $folders->show($id);
         $data['folder'] = $folder;
         $data['images'] = $this->images($nameFolder);
         $this->responData($data);

@@ -26,42 +26,12 @@
                     <div class="row">
 
                         <div id="raper-media-foler">
-                            <div class="col-sm-2">
-                                <div class="media-folder">
-                                    <i class="fa fa-folder"></i>
-                                    <label>Thời trang</label>
-                                </div>
-                            </div>
 
-                            <div class="col-sm-2">
-                                <div class="media-folder">
-                                    <i class="fa fa-folder"></i>
-                                    <label>Phụ kiện điện thoại</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-folder">
-                                    <i class="fa fa-folder"></i>
-                                    <label>Máy tính & laptop</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-folder">
-                                    <i class="fa fa-folder"></i>
-                                    <label>Mỹ phẩm</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-folder">
-                                    <i class="fa fa-folder"></i>
-                                    <label>Đồ gia dụng</label>
-                                </div>
-                            </div>
                         </div>
                         <div id="raper-media-images">
                             <div class="col-sm-2">
                                 <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
+                                    <img src="{{ asset('img/img_test.jpg') }}" title="" onclick="">
                                 </div>
                             </div>
                             <div class="col-sm-2">
@@ -280,3 +250,5 @@
 </div>
 <script src="{{ asset('console/js/media/uploadimages.js') }}?v={{$time}}"></script>
 <script src="{{ asset('console/js/media/folder.js') }}?v={{$time}}"></script>
+<script src="{{ asset('console/js/media/mediacencer.js') }}?v={{$time}}"></script>
+<script src="{{ asset('console/js/media/images.js') }}?v={{$time}}"></script>

@@ -41,8 +41,12 @@ function addFolder() {
 }
 
 function listFolders(data) {
+
+    if(!data) {
+        return false;
+    }
     for (i = 0; i < data.length; i ++) {
-        item = '<div class="col-sm-2" onclick="gotoFolder('+data[i].id+')">' +
+        item = '<div class="col-sm-2" onclick="media('+data[i].id+')">' +
                 '<div class="media-folder">' +
                 '<i class="fa fa-folder"></i>' +
                 '<label>'+data[i].name_folder+'</label>' +

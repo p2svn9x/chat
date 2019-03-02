@@ -73,7 +73,7 @@
         </div>
         <br/>
         <br/>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-backdrop="static" data-target="#mediaCencer">mediaCencer</button>
+        <button type="button" class="btn btn-info btn-lg" onclick="mediaCencer()">mediaCencer</button>
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-backdrop="static" data-target="#addFolder">addFolder</button>
         <input type="hidden" class="form-control input_add_item" id="idAttribute" value=""/>
         <button type="button" class="btn btn-primary" id="add_item" onclick="save()">Lưu lại</button>
