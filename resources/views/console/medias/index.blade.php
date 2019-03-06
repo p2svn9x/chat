@@ -5,12 +5,9 @@
         <div class="modal-content">
             <div class="media-cencer">
                 <div class="row media-heading" style=" margin-right: 0px;margin-left: 0px;">
-                    <div class="col-sm-6" style=""><p>Media Center</p>
+                    <div class="col-sm-6" style=""><p onclick="media(0)" style="cursor: pointer">Media Center</p>
                         <ul class="breadcrumb" style="background: #fff">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Pictures</a></li>
-                            <li><a href="#">Summer 15</a></li>
-                            <li>Italy</li>
+
                         </ul>
                     </div>
                     <div class="col-sm-6 button-option">
@@ -186,7 +183,7 @@
                 </div>
                 <div class="media-bottom">
                     <div>
-                        <button type="button" class="btn btn-dark cancel">Hủy</button>
+                        <button type="button" class="btn btn-dark cancel" onclick="closeMedia()">Hủy</button>
                         <button type="button" class="btn btn-warning apply">Chọn</button>
                     </div>
                 </div>
@@ -201,7 +198,7 @@
         <div class="modal-content" style="">
             <p>Tạo thư mục</p>
             <input value="" type="text" id="nameFolder" placeholder="Tên thưc mục">
-            <p class="error"></p>
+            <p class="error" style="color: #f00"></p>
             <button type="button" class="btn btn-dark cancel" onclick="closeFolder()">Hủy</button>
             <button type="button" class="btn btn-warning apply" onclick="addFolder()">Lưu</button>
             <span class="iconLoading"><i class="fa fa-spinner fa-spin" style="font-size:24px"></i></span>

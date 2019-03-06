@@ -8,7 +8,6 @@ function closeFolder(){
 function addFolder() {
 
     nameFolder = $("#addFolder #nameFolder").val();
-    parentFolder = $("#parentFolder").val();
 
     if (!nameFolder) {
         $("#addFolder p.error").html('Têm thư mục không được trống');
@@ -21,7 +20,7 @@ function addFolder() {
         type: "post",
         dateType: "json",
         data: {
-            parent: parentFolder,
+            parent: folderMedia,
             name: nameFolder,
         },
         success: function (result) {
