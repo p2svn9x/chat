@@ -37,7 +37,7 @@ class FoldersController extends ConsoleController
         $folder->name_folder = $name;
         $checkFolder = $this->created($demo."/".$nameFolder);
         if (empty($checkFolder)) {
-            $this->respondStatus('Thư mục đã tồn tại');
+            $this->respondError('Thư mục đã tồn tại');
         }
 
         if ($folder->save()) {

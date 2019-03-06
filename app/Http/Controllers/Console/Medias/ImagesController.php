@@ -39,6 +39,10 @@ class ImagesController extends ConsoleController
         $mimes = array('image/jpeg', 'image/png', 'image/gif', 'image/jpg', 'image/*');
         $file = $request->images;
 
+        if(empty($file)) {
+            $this->respondError("Bạn chưa chọn ảnh");
+        }
+
         if (!in_array($file->getMimeType(), $mimes)) {
             return $this->respondError("Định dạng ảnh không đúng");
         }
@@ -49,7 +53,8 @@ class ImagesController extends ConsoleController
         }
 
         $folders = new FoldersController();
-        $nameFolder = $folders->findFolder($folder);
+        $nameFolder = $folders->findChildentFolder($folder);
+       
         try {
             $file->move(public_path($nameFolder),$file->getClientOriginalName());
             $this->responData($nameFolder."/".$file->getClientOriginalName());

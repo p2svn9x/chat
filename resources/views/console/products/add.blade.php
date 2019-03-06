@@ -48,20 +48,10 @@
         <div class="form-group rowClom">
             <div class="col-sm-2"><label for="">Chọn màu sách</label></div>
             <div class="col-sm-10 isColor">
-                <div class="group-color" id="colorDefault12345">
-                    <input id="inputColorDefault12345" value="fff" type="hidden">
-                    <button id="setCodeDefault" class ="jscolor {valueElement:'inputColorDefault12345'} buttonColor"></button>
-                    <div class="imgByColor">
-                        <input type="file" onchange="addImages(12345)" >
-                        <img class="iconImagesByColor" onclick="chooseImgByColor(12345)" src="{{ asset('img/imgdefault.png') }}">
-                        <div class="listImg">
-                            <img class="imgColer" src="{{ asset('img/img_test.jpg') }}">
-
-                        </div>
-                    </div>
+                <div class="colorTagImg">
                 </div>
                 <div class="group-color" id="colorDefault">
-                    <input id="inputColorDefault" value="fff" type="hidden" onchange="addColor()" onblur="addColor1()">
+                    <input id="inputColorDefault" value="fff" type="hidden">
                     <button id="setCodeDefault" class ="jscolor {valueElement:'inputColorDefault'} buttonColor"></button>
                     <button type="button" class="btn btn-success" id="add_item" onclick="addColor()">Thêm màu</button>
                 </div>
@@ -73,8 +63,6 @@
         </div>
         <br/>
         <br/>
-        <button type="button" class="btn btn-info btn-lg" onclick="mediaCencer()">mediaCencer</button>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-backdrop="static" data-target="#addFolder">addFolder</button>
         <input type="hidden" class="form-control input_add_item" id="idAttribute" value=""/>
         <button type="button" class="btn btn-primary" id="add_item" onclick="save()">Lưu lại</button>
         <button type="submit" class="btn btn-default" onclick="cancelAdd()">Hủy</button>

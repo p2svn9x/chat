@@ -18,7 +18,7 @@ class NewusersController extends ConsoleController
     public function callApi()
     {
         $page = $this->getPage();
-        $url = 'https://admin.smobgame.com/plf/Shurikates/datats?query=SELECT users.id, users.username, users.email, users.email_verified, users.phone, users.phone_verified, users.facebook_uid, users.vip, users.vip_en, profiles.fullname, profiles.peopleId, profiles.peopleId_date_get, profiles.peopleId_place_get FROM users LEFT JOIN `profiles` ON `profiles`.`user_id` = `users`.id  ORDER BY users.id  LIMIT '.$page['offset'].', 1000&model=User';
+        $url = 'https://admin.smobgame.com/plf/Shurikates/datats?query=SELECT users.id, users.username, users.email, users.email_verified, users.phone, users.phone_verified, users.facebook_uid, users.vip, users.vip_en FROM users ORDER BY users.id LIMIT '.$page['offset'].', 1000&model=User';
         //$url = 'https://admin.smobgame.com/plf/Shurikates/datats?query=SELECT    users.id,   users.username,   users.email,   users.email_verified,   users.phone,   users.phone_verified,   users.facebook_uid,   users.vip,   users.vip_en,   profiles.fullname,   profiles.peopleId,   profiles.peopleId_date_get,   profiles.peopleId_place_get  FROM   users    LEFT JOIN `profiles`      ON `profiles`.`user_id` = `users`.id  WHERE users.id = 12920851&model=User';
         $url = str_replace(' ', '%20', $url);
         $curl_handle = curl_init();
@@ -72,7 +72,7 @@ class NewusersController extends ConsoleController
         foreach ($datas AS $data) {
             $vipVn = $vipEn = 'Default';
             $dataUser = $data['users'];
-            $dataProfiles = $data['profiles'];
+           // $dataProfiles = $data['profiles'];
 
             if (!empty($dataUser['vip'])) {
                 $vipVn = $dataUser['vip'];
@@ -92,10 +92,10 @@ class NewusersController extends ConsoleController
                 'facebook_uid' => $dataUser['facebook_uid'],
                 'vip_vn' => $vipVn,
                 'vip_en' => $vipEn,
-                'fullname' => $dataProfiles['fullname'],
-                'peopleId' => $dataProfiles['peopleId'],
-                'peopleId_date_get' => $dataProfiles['peopleId_date_get'],
-                'peopleId_place_get' => $dataProfiles['peopleId_place_get']
+//                'fullname' => $dataProfiles['fullname'],
+//                'peopleId' => $dataProfiles['peopleId'],
+//                'peopleId_date_get' => $dataProfiles['peopleId_date_get'],
+//                'peopleId_place_get' => $dataProfiles['peopleId_place_get']
             );
         }
         //$this->printData($rows);

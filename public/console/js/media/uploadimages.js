@@ -2,23 +2,28 @@ var http_arr = new Array();
 function triggerFile() {
     $("#fileUploadMedia").trigger("click");
 }
-
+var stt = 0;
 function doUploadImages() {
     document.getElementById('progress-group').innerHTML = ''; //Reset lại Progress-group
     var files = document.getElementById('fileUploadMedia').files;
     if (files.length < 1) {
         return false;
     }
+    stt = 0;
     $("#text-select-file").fadeOut(1);
     $("#progress-group").fadeIn(1);
+
     for (i = 0; i < files.length; i++) {
+
         uploadFile(files[i], i);
     }
     return false;
 }
 var testData;
 var result;
+
 function uploadFile(file, index) {
+    console.log(index);
     var http = new XMLHttpRequest();
     http.responseType = 'json';
     http_arr.push(http);
@@ -72,7 +77,7 @@ function uploadFile(file, index) {
     var data = new FormData();
     data.append('filename', file.name);
     data.append('images', file);
-    http.open('POST', 'http://cntt.com/console/medias/images/add/0', true);
+    http.open('POST', 'http://cntt.com/console/medias/images/add/'+folderMedia, true);
     http.send(data);
 
 
@@ -92,6 +97,12 @@ function uploadFile(file, index) {
         }
 
         setTimeout(function(){
+
+            if (stt == 0) {
+                stt = 1;
+                addToListImg(http.response.data)
+            }
+
             ProgressBar.className += ' progress-bar-success'; //Thêm class Success
             ProgressBar.innerHTML = result.message; //Thông báo     
         }, 100);

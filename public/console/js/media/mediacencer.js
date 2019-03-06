@@ -3,6 +3,11 @@ function mediaCencer() {
     media(0);
 }
 
+function closeMedia() {
+    $("#mediaCencer").modal('hide');
+}
+
+var folderMedia = 0;
 function media(id) {
     $.ajax({
         url: serverName + 'console/medias/images/'+id ,
@@ -16,7 +21,7 @@ function media(id) {
             $("#raper-media-foler").html('');
             $("#raper-media-images").html('');
             $(".media-heading .breadcrumb").html('');
-
+            folderMedia = id;
             listFolders(obj.data.childentFolders);
             listImage(obj.data.images);
             if (obj.data.folder.length < 1) {
@@ -39,7 +44,7 @@ function breadcrumb(data, name) {
     }
 
     for(i = 0; i < data.length; i++ ) {
-        item = '<li><a onclick="media(data[i].id)">'.data[i].name_folder+'</a></li>';
+        item = '<li><a onclick="media('+data[i].id+')">'+data[i].name_folder+'</a></li>';
         $(".media-heading .breadcrumb").prepend(item);
     }
 }

@@ -93,10 +93,9 @@
     text-align:right
 }
 #mediaCencer .content-medias {
-    max-height: 500px;
+    height: 500px;
     overflow:hidden;
     overflow-y: scroll;
-
 }
 .content-medias::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -248,4 +247,8 @@
 .media-heading .breadcrumb {
     margin-bottom: 0px;
     background: #fff;
+}
+
+.media-heading .breadcrumb a {
+    cursor:pointer;
 }
