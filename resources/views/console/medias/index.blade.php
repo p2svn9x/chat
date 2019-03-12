@@ -25,157 +25,7 @@
                         <div id="raper-media-foler">
 
                         </div>
-                        <div id="raper-media-images">
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}" title="" onclick="">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="media-images">
-                                    <img src="{{ asset('img/img_test.jpg') }}">
-                                </div>
-                            </div>
+                        <div id="raper-media-images" style="padding-top: 10px">
 
                         </div>
 
@@ -184,7 +34,7 @@
                 <div class="media-bottom">
                     <div>
                         <button type="button" class="btn btn-dark cancel" onclick="closeMedia()">Hủy</button>
-                        <button type="button" class="btn btn-warning apply">Chọn</button>
+                        <button type="button" class="btn btn-warning apply" onclick="addUrlToArray()">Chọn</button>
                     </div>
                 </div>
             </div>
@@ -192,7 +42,7 @@
 
     </div>
 </div>
-<input type="text" value="0" id="parentFolder">
+
 <div class="modal fade" id="addFolder" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content" style="">
