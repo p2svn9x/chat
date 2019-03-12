@@ -39,11 +39,29 @@
                 <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom"  title="Phần Mô tả sản phẩm cung cấp những thông tin hữu ích về sản phẩm để giúp khách hàng quyết định mua sắm."></i>
                 <span class="required">*</span>
             </label>
-            <textarea type="text" class="form-control input_add_item" id="content"></textarea>
+            <textarea type="text" class="form-control" id="content"></textarea>
         </div>
         <div class="form-group">
             <label for="">Bảo hành</label>
             <input type="text" class="form-control input_add_item" id="cuarantee">
+        </div>
+
+        <div class="form-group price">
+            <label for="">Giá</label>
+            <input type="text" class="form-control input_add_item" id="price">
+            <select id="currency">
+                <option value="1">VND</option>
+                <option value="2">USD</option>
+            </select>
+        </div>
+
+        <div class="form-group price">
+            <label for="">Giảm giá</label>
+            <input type="text" class="form-control input_add_item" id="sale">
+            <select id="currenSale">
+                <option value="1">đ</option>
+                <option value="2">%</option>
+            </select>
         </div>
         <div class="form-group rowClom">
             <div class="col-sm-2"><label for="">Chọn màu sách</label></div>
@@ -51,7 +69,7 @@
                 <div class="colorTagImg">
                 </div>
                 <div class="group-color" id="colorDefault">
-                    <input id="inputColorDefault" value="fff" type="hidden">
+                    <input id="inputColorDefault" value="FFE3E3" type="hidden">
                     <button id="setCodeDefault" class ="jscolor {valueElement:'inputColorDefault'} buttonColor"></button>
                     <button type="button" class="btn btn-success" id="add_item" onclick="addColor()">Thêm màu</button>
                 </div>
