@@ -1,7 +1,12 @@
-function mediaCencer() {
+var functionCallbackImg;
+var arrayImg = [];
+function mediaCencer(callback) {
     $('#mediaCencer').modal({backdrop: 'static', keyboard: false});
+    arrayImg = [];
     media(0);
+    functionCallbackImg = callback;
 }
+
 
 function closeMedia() {
     $("#mediaCencer").modal('hide');
@@ -47,4 +52,31 @@ function breadcrumb(data, name) {
         item = '<li><a onclick="media('+data[i].id+')">'+data[i].name_folder+'</a></li>';
         $(".media-heading .breadcrumb").prepend(item);
     }
+}
+
+
+function chooseImage(event) {
+
+    url = $(event).attr('title');
+    tagSpan = $(event).find("span");
+    index = arrayImg.indexOf(url);
+    if (index > -1) {
+        arrayImg.splice(index, 1);
+        tagSpan.fadeOut(1);
+        return false;
+    }
+    tagSpan.fadeIn(1);
+    arrayImg.push(url);
+}
+
+function addUrlToArray() {
+
+    if (!arrayImg) {
+        return false;
+    }
+
+    fn = window[functionCallbackImg];
+    fn(arrayImg);
+    $("#mediaCencer").modal('hide');
+    //return false;
 }

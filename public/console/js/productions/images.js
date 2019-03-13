@@ -22,27 +22,15 @@ function addToListImg(url) {
 }
 
 var groupImg = 0;
-var arrayImg = [];
+
+
 
 function setGroupImg(id) {
     groupImg = id;
-    arrayImg = [];
-    mediaCencer();
+    mediaCencer('imagesByColor');
+
 }
 
-function chooseImage(event) {
-
-    url = $(event).attr('title');
-    tagSpan = $(event).find("span");
-    index = arrayImg.indexOf(url);
-    if (index > -1) {
-        arrayImg.splice(index, 1);
-        tagSpan.fadeOut(1);
-       return false;
-    }
-    tagSpan.fadeIn(1);
-    arrayImg.push(url);
-}
 
 function chooseImgByColor() {
     $("#mediaCencer").modal('show');
@@ -59,11 +47,8 @@ function makeid() {
     return text;
 }
 
-function addUrlToArray() {
 
-    if (!arrayImg) {
-        return false;
-    }
+function imagesByColor(arrayImg) {
 
     activeImg = $("#colorDefault" + groupImg + " .activeImg").val();
     stringUrlImages = $("#colorDefault" + groupImg + " .urlImages").val();
@@ -103,7 +88,7 @@ function addImgToGroup(data, groupImg, activeImg) {
             '</div>';
         $("#colorDefault"+ groupImg + " .listImg").append(item);
     }
-    $("#mediaCencer").modal('hide');
+
 }
 
 function activeImgByGroup(event, groupImg, index) {
@@ -130,3 +115,26 @@ function removeImgGroup(groupImg, index) {
     //
 
 }
+
+function chooseAvartar() {
+    mediaCencer('setAvartar');
+}
+
+function setAvartar(data) {
+
+    console.log(data);
+    url = '';
+    for (i = 0; i < data.length; i++) {
+        url = data[i];
+        break;
+    }
+
+    if (!url) {
+        return false;
+    }
+    $("#avartar").val(url);
+
+    //$("#tagAvartar").css('background', 'url(' +serverName+url+')');
+    $("#tagAvartar img").attr('src', serverName+url)
+}
+

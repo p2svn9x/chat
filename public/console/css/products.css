@@ -123,3 +123,35 @@ button.buttonColor:active {
 .quantily input[type=number] {
     -moz-appearance:textfield;
 }
+.input_add_item {
+    max-width:400px;
+}
+.price label {
+    clear:both;
+    display:block;
+}
+.price input.input_add_item {
+    width:100px;
+    float:left
+}
+
+.price select {
+    width:100px;
+    padding: 7px 10px 7px 10px;
+    /* float: left; */
+    margin-left: 10px;
+    border-radius: 5px;
+}
+#tagAvartar {
+    width:100px;
+    height:100px;
+    border:1px solid #ccc;
+    background: url('../../img/imgdefault.png') #fff center no-repeat;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    /* background-size: cover !important; */
+    /* background-size: 100px 100px !important; */
+    cursor: pointer;
+    border-radius:3px;
+}

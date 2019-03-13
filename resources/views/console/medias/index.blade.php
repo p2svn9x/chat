@@ -98,4 +98,4 @@
 <script src="{{ asset('console/js/media/uploadimages.js') }}?v={{$time}}"></script>
 <script src="{{ asset('console/js/media/folder.js') }}?v={{$time}}"></script>
 <script src="{{ asset('console/js/media/mediacencer.js') }}?v={{$time}}"></script>
-<script src="{{ asset('console/js/media/images.js') }}?v={{$time}}"></script>
+

@@ -185,4 +185,13 @@ class IndexController extends ConsoleController
         $this->respondError('Đã xẩy ra lỗi vui lòng thử lại sau');
     }
 
+    public function attributeByCategory($id = null)
+    {
+        if (empty($id)) {
+            $this->respondError('Bạn chưa chỏn danh mục san phẩm.');
+        }
+
+        $result = Attribute:: where('category_id', $id)->get(['id','type','title']);
+        $this->responData($result);
+    }
 }
