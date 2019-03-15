@@ -134,7 +134,7 @@ function setAvartar(data) {
     }
     $("#avartar").val(url);
 
-    //$("#tagAvartar").css('background', 'url(' +serverName+url+')');
-    $("#tagAvartar img").attr('src', serverName+url)
+    $("#tagAvartar").css('background', 'url(' +serverName+url+')');
+   // $("#tagAvartar img").attr('src', serverName+url)
 }
 

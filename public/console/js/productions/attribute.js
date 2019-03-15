@@ -31,7 +31,8 @@ function addAttribute(data) {
     for(i = 0; i < data.length; i++) {
         item = '<div class="form-group">' +
             '  <label for="">'+data[i].title+'</label>' +
-            '   <input type="text" rel="'+data[i].title+'" class="form-control input_add_item">' +
+            '   <input type="text" id="attributeValue'+data[i].id+'" rel="'+data[i].id+'" class="form-control input_add_item attributeValue">' +
+            '   <span id="attributeValue'+data[i].id+'Error" class="error"></span>'+
             '</div>';
         $("#attribute").append(item);
     }

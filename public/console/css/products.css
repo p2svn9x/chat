@@ -113,14 +113,14 @@ button.buttonColor:active {
     margin-left: 10px;
 }
 
-.quantily input::-webkit-outer-spin-button,
-.quantily input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
 
     -webkit-appearance: none;
     margin: 0;
 }
 
-.quantily input[type=number] {
+input[type=number] {
     -moz-appearance:textfield;
 }
 .input_add_item {
@@ -154,4 +154,15 @@ button.buttonColor:active {
     /* background-size: 100px 100px !important; */
     cursor: pointer;
     border-radius:3px;
+}
+.datepickerDashboard {
+    display:block;
+    clear: both;
+    margin-top: 10px;
+}
+.datepickerDashboard input {
+    padding: 6px;
+    border: 1px solid #a49f9f;
+    border-radius:3px;
+    width: 210px;
 }

@@ -45,13 +45,13 @@
             <ul class="hoe-sub-menu">
                 <li>
                     <a href="{{URL::route('console/products/list')}}">
-                        <span class="menu-text">Danh sách sản phẩm</span>
+                        <span class="menu-text">Danh sách</span>
                         <span class="selected"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)">
-                        <span class="menu-text">Danh sách thuộc tính</span>
+                    <a href="{{URL::route('console/products/add')}}">
+                        <span class="menu-text">Thêm mới </span>
                         <span class="selected"></span>
                     </a>
                 </li>

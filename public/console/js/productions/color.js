@@ -11,18 +11,20 @@ function addColor() {
 function addHtmlImgByColor(color) {
     timestamp = Date.now();
     optionColor = "{valueElement:'colorDefaultInput"+timestamp+"'}";
-    item = '<div class="group-color tagColor" id="colorDefault'+timestamp+'">' +
+    item = '<div class="group-color tagColor" id="colorDefault'+timestamp+'" rel ="'+timestamp+'">' +
         '<input id="colorDefaultInput'+timestamp+'" value="'+color+'" type="hidden">' +
         '<button id="setCodeDefault" class ="jscolor '+optionColor+' buttonColor"></button>' +
         '<span class="removeColor" onclick="removeColor()"></span>'+
         '<div class="imgByColor">' +
         '<img class="iconImagesByColor" onclick="setGroupImg('+timestamp+')" src="'+serverName+'img/imgdefault.png">' +
         '<div class="quantily"><span>Số lượng</span> ' +
-            '<input type="number" value="0"> ' +
+            '<input type="number" id="quantily'+timestamp+'" value="0"> ' +
+            '<span id="quantily'+timestamp+'Error" class="error"></span>'+
         '</div>' +
         '<div class="listImg"></div>' +
-        '<textarea type="text" class="urlImages" style="display: none"></textarea>' +
-        '<input type="hidden" class="activeImg" value="0">' +
+        '<textarea type="text" class="urlImages" id="urlImages'+timestamp+'" style="display: none"></textarea>' +
+        '<span id="urlImages'+timestamp+'Error" class="error"></span>'+
+        '<input type="hidden" class="activeImg" id="activeImg'+timestamp+'" value="0">' +
         '</div>' +
         '</div>';
 
