@@ -14,7 +14,7 @@ function addHtmlImgByColor(color) {
     item = '<div class="group-color tagColor" id="colorDefault'+timestamp+'" rel ="'+timestamp+'">' +
         '<input id="colorDefaultInput'+timestamp+'" value="'+color+'" type="hidden">' +
         '<button id="setCodeDefault" class ="jscolor '+optionColor+' buttonColor"></button>' +
-        '<span class="removeColor" onclick="removeColor()"></span>'+
+        '<span class="removeColor" onclick="removeColor('+timestamp+')"><i class="fa fa-trash-o"></i></span>'+
         '<div class="imgByColor">' +
         '<img class="iconImagesByColor" onclick="setGroupImg('+timestamp+')" src="'+serverName+'img/imgdefault.png">' +
         '<div class="quantily"><span>Số lượng</span> ' +

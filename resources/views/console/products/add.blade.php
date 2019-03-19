@@ -101,7 +101,29 @@
                 <span id="rowClomError" class="error" style="display: block; clear: both;"></span>
             </div>
         </div>
-
+        <table>
+            <th>
+                <td>Hiển thị</td>
+                <td>Nhón màu</td>
+                <td>Khích thước</td>
+                <td>Số lượng</td>
+            </th>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="switch switchStatus">
+                            <input id="cmn-toggle-baryn" rel="" title="" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                            <label for="cmn-toggle-baryn"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="selectCode">
+                            <option value=""> <span style="background: #f00">dsadsa</span></option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <div class="alert alert-danger" id="dangerStatus" style="display: none">
             <strong></strong> <span id="textStatusAlert"></span>
         </div>
